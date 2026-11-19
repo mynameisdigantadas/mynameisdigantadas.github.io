@@ -46,6 +46,10 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 */
+body{
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
 body>section>.profile {
     display: flex;
     flex-direction: column;
