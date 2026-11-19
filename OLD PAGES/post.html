@@ -1,0 +1,2831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latest Articles | POST</title>
+
+    <meta name="description" content="Explore the latest articles, technology updates and educational content.">
+
+    <meta name="keywords" content="HTML, CSS, JavaScript, Website">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- ================= THEME ================= -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- ================= SEO ================= -->
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- ================= OPEN GRAPH ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Website">
+    <meta property="og:description" content="Website description">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/preview.jpg">
+    <meta property="og:site_name" content="My Website">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Website">
+    <meta name="twitter:description" content="Website description">
+    <meta name="twitter:image" content="https://example.com/preview.jpg">
+
+    <!-- ================= RESOURCE HINTS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+
+    <!-- ================= CSS ================= -->
+    <link rel="stylesheet" href="style.css">
+<style>
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.back-link {
+    color: #315efb;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* =====================================
+   ARTICLE
+===================================== */
+
+.article {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px rgba(0,0,0,.05);
+}
+
+.article-content {
+    padding: 35px;
+}
+
+
+/* =====================================================
+   CYBER / GAMING CODE PANELS + HIGHLIGHT.JS TOOLBAR
+===================================================== */
+.smart-code-block {
+    position: relative;
+    isolation: isolate;
+    margin: 25px 0;
+    border: 1px solid rgba(91, 224, 255, .38);
+    border-radius: 13px;
+    overflow: hidden;
+    background: #080d18;
+    box-shadow: 0 0 0 1px rgba(145, 91, 255, .10),
+                0 10px 28px rgba(0, 0, 0, .24),
+                0 0 22px rgba(0, 204, 255, .09);
+}
+.smart-code-block::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 auto;
+    height: 2px;
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6, #ff4fd8, #00e5ff);
+    background-size: 220% 100%;
+    animation: smartCodeGlow 7s linear infinite;
+}
+@keyframes smartCodeGlow { to { background-position: 220% 0; } }
+.smart-code-toolbar {
+    min-height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 13px;
+    color: #eaf7ff;
+    background: linear-gradient(105deg, #111a2b, #17152b 58%, #101b2a);
+    border-bottom: 1px solid rgba(104, 196, 255, .20);
+    font: 12px/1.4 Inter, Segoe UI, Arial, sans-serif;
+}
+.smart-code-language {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 800;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    color: #8cecff;
+}
+.smart-code-language::before {
+    content: "</>";
+    display: inline-grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgba(0, 229, 255, .35);
+    border-radius: 7px;
+    color: #d7a8ff;
+    background: rgba(0, 229, 255, .08);
+    font: 800 10px/1 Consolas, monospace;
+}
+.smart-code-actions { display: flex; align-items: center; gap: 7px; }
+.smart-code-actions >button {
+    border: 1px solid rgba(132, 177, 220, .35);
+    border-radius: 7px;
+    padding: 7px 11px;
+    background: linear-gradient(180deg, #26344b, #192438);
+    color: #f2f8ff;
+    cursor: pointer;
+    font: 700 11px/1.2 Inter, Segoe UI, Arial, sans-serif;
+    letter-spacing: .35px;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.smart-code-actions >button:hover {
+    transform: translateY(-1px);
+    border-color: #50e7ff;
+    box-shadow: 0 0 13px rgba(0, 220, 255, .22);
+}
+.smart-code-actions >button:active { transform: translateY(0); }
+.smart-code-block >pre {
+    margin: 0 !important;
+    padding: 18px !important;
+    overflow: auto;
+    background: radial-gradient(ellipse at top right, rgba(68, 46, 119, .17), transparent 48%), #080d18 !important;
+    white-space: pre !important;
+    tab-size: 4;
+    scrollbar-color: #465b83 #101827;
+    scrollbar-width: thin;
+}
+.smart-code-block >pre >code {
+    display: block;
+    min-width: max-content;
+    padding: 0 !important;
+    background: transparent !important;
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.75;
+    white-space: pre !important;
+    text-shadow: 0 0 12px rgba(91, 190, 255, .08);
+}
+@media (max-width: 600px) {
+    .article-content { padding: 20px; }
+    .smart-code-toolbar { padding: 8px 9px; gap: 6px; }
+    .smart-code-actions { gap: 5px; }
+    .smart-code-actions >button { padding: 7px 8px; font-size: 10px; }
+    .smart-code-block >pre { padding: 13px !important; }
+    .smart-code-block >pre >code { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .smart-code-block::before { animation: none; }
+    .smart-code-actions >button { transition: none; }
+}
+
+
+/* =====================================================
+   NEON GAMING DATA TABLES + COPY / DOWNLOAD TOOLBAR
+   Additive styling: keeps the semantic table markup intact.
+===================================================== */
+.smart-table-block {
+    position: relative;
+    margin: 28px 0;
+    border: 1px solid rgba(83, 218, 255, .42);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #080d18;
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, .12),
+                0 12px 32px rgba(0, 0, 0, .20),
+                0 0 24px rgba(0, 210, 255, .10);
+}
+.smart-table-block::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6, #ff4fd8, #00e5ff);
+    background-size: 220% 100%;
+    animation: smartTableGlow 7s linear infinite;
+}
+@keyframes smartTableGlow { to { background-position: 220% 0; } }
+.smart-table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 54px;
+    padding: 9px 13px;
+    color: #eaf7ff;
+    background: linear-gradient(105deg, #111a2b, #17152b 58%, #101b2a);
+    border-bottom: 1px solid rgba(104, 196, 255, .22);
+    font: 800 11px/1.4 Inter, "Segoe UI", Arial, sans-serif;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+.smart-table-title { display: inline-flex; align-items: center; gap: 9px; color: #8cecff; }
+.smart-table-title::before {
+    content: "▦";
+    display: inline-grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border: 1px solid rgba(0, 229, 255, .4);
+    border-radius: 8px;
+    color: #d7a8ff;
+    background: rgba(0, 229, 255, .08);
+    font-size: 17px;
+}
+.smart-table-actions { display: flex; align-items: center; gap: 7px; }
+.smart-table-actions button {
+    border: 1px solid rgba(132, 177, 220, .38);
+    border-radius: 7px;
+    padding: 8px 11px;
+    color: #f2f8ff;
+    background: linear-gradient(180deg, #26344b, #192438);
+    cursor: pointer;
+    font: 800 10px/1.2 Inter, "Segoe UI", Arial, sans-serif;
+    letter-spacing: .4px;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.smart-table-actions button:hover {
+    transform: translateY(-1px);
+    border-color: #50e7ff;
+    box-shadow: 0 0 13px rgba(0, 220, 255, .22);
+}
+.smart-table-scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #465b83 #101827; }
+.smart-table-block table { width: 100%; min-width: 420px; margin: 0; border-collapse: separate; border-spacing: 0; color: #dce8f7; background: #0b1220; font-size: 14px; line-height: 1.55; }
+.smart-table-block thead th {
+    padding: 14px 16px;
+    text-align: left;
+    color: #9deeff;
+    background: linear-gradient(180deg, #17263b, #111c2e);
+    border-bottom: 1px solid rgba(0, 229, 255, .28);
+    font-weight: 800;
+    white-space: nowrap;
+}
+.smart-table-block tbody td { padding: 13px 16px; border-bottom: 1px solid rgba(139, 163, 194, .13); color: #d6dfed; }
+.smart-table-block tbody tr:nth-child(even) td { background: rgba(91, 112, 148, .075); }
+.smart-table-block tbody tr:hover td { background: rgba(0, 204, 255, .09); color: #fff; }
+.smart-table-block tbody tr:last-child td { border-bottom: 0; }
+.smart-table-block th:first-child, .smart-table-block td:first-child { padding-left: 19px; }
+@media (max-width: 600px) {
+    .smart-table-toolbar { align-items: flex-start; flex-direction: column; padding: 10px; }
+    .smart-table-actions { width: 100%; }
+    .smart-table-actions button { flex: 1; padding: 9px 7px; }
+    .smart-table-block table { font-size: 12px; }
+    .smart-table-block thead th, .smart-table-block tbody td { padding: 11px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .smart-table-block::before { animation: none; } .smart-table-actions button { transition: none; } }
+
+/* =====================================================
+   LIGHT THEME OVERRIDE — WHITE TABLE SURFACE + NEON ACCENTS
+   Keeps the gaming aesthetic while matching a light page theme.
+===================================================== */
+.smart-table-block {
+    background: #ffffff;
+    border: 1px solid rgba(14, 165, 233, .42);
+    box-shadow: 0 8px 26px rgba(15, 23, 42, .07),
+                0 0 0 1px rgba(139, 92, 246, .07),
+                0 0 18px rgba(14, 165, 233, .08);
+}
+.smart-table-toolbar {
+    color: #172033;
+    background: linear-gradient(105deg, #ffffff, #f5f8ff 58%, #f7f4ff);
+    border-bottom: 1px solid rgba(14, 165, 233, .22);
+}
+.smart-table-title { color: #087eaa; }
+.smart-table-title::before {
+    color: #7c3aed;
+    border-color: rgba(14, 165, 233, .38);
+    background: linear-gradient(135deg, rgba(14, 165, 233, .09), rgba(139, 92, 246, .08));
+}
+.smart-table-actions button {
+    color: #123047;
+    border: 1px solid rgba(14, 165, 233, .35);
+    background: linear-gradient(180deg, #ffffff, #edf7ff);
+    box-shadow: 0 2px 7px rgba(15, 23, 42, .06);
+}
+.smart-table-actions button:hover {
+    color: #075985;
+    border-color: #06b6d4;
+    background: linear-gradient(180deg, #ffffff, #e5f8ff);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, .10), 0 5px 14px rgba(14, 165, 233, .12);
+}
+.smart-table-scroll { scrollbar-color: #8bdcf0 #eef4fa; }
+.smart-table-block table {
+    color: #263449;
+    background: #ffffff;
+}
+.smart-table-block thead th {
+    color: #075985;
+    background: linear-gradient(180deg, #f0fbff, #e8f5ff);
+    border-bottom: 1px solid rgba(6, 182, 212, .38);
+}
+.smart-table-block tbody td {
+    color: #334155;
+    background: #ffffff;
+    border-bottom: 1px solid #e8eef5;
+}
+.smart-table-block tbody tr:nth-child(even) td { background: #f7faff; }
+.smart-table-block tbody tr:hover td {
+    color: #0f2940;
+    background: #eafaff;
+}
+
+
+
+.article-image {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    background: #e5e5e5;
+}
+
+.category {
+    display: inline-block;
+    padding: 6px 13px;
+    background: #e8efff;
+    color: #2855bd;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* ADDITIVE: display comma-separated article categories as individual badges */
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+}
+.category-list .category {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    padding: 6px 13px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    line-height: 1.4;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.category-list .category:nth-child(6n + 1) { background: #e8efff; color: #2855bd; border-color: #cbd9ff; }
+.category-list .category:nth-child(6n + 2) { background: #e6f8ef; color: #167447; border-color: #bcebd0; }
+.category-list .category:nth-child(6n + 3) { background: #fff1df; color: #a65308; border-color: #ffdbb0; }
+.category-list .category:nth-child(6n + 4) { background: #f4eaff; color: #7436a8; border-color: #e1c8ff; }
+.category-list .category:nth-child(6n + 5) { background: #ffe9ef; color: #b42355; border-color: #ffc8d8; }
+.category-list .category:nth-child(6n) { background: #e2f7fa; color: #087b8c; border-color: #b5eaf0; }
+.category-list .category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, .12);
+}
+@media (max-width: 600px) {
+    .category-list { gap: 6px; }
+    .category-list .category { padding: 5px 10px; }
+}
+
+
+.article-title {
+    font-size: 34px;
+    line-height: 1.35;
+    color: #202020;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.article-description {
+    padding: 20px;
+    background: #f4f7ff;
+    border-left: 4px solid #315efb;
+    border-radius: 7px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    overflow-wrap: anywhere;
+    /* white-space: pre-wrap; */
+}
+
+.article-body {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.article-body >h2 {
+    margin: 25px 0 12px;
+    color: #222;
+}
+
+.article-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.back-button {
+    display: inline-block;
+    background: #315efb;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: #1944d1;
+}
+
+/* =====================================
+   LOADING
+===================================== */
+
+.loading {
+    padding: 70px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    color: #777;
+}
+
+.loader {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #e5e5e5;
+    border-top-color: #315efb;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading >h3 {
+    color: #333;
+    margin-bottom: 7px;
+}
+
+/* =====================================
+   ERROR
+===================================== */
+
+.error-box {
+    padding: 35px 25px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.error-box >h2 {
+    color: #b00020;
+    margin-bottom: 10px;
+}
+
+.error-box >p {
+    color: #777;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.error-box >a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #315efb;
+    font-weight: bold;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    padding: 30px 10px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width: 650px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .header-inner {
+        padding: 15px;
+    }
+
+    .article-content {
+        padding: 20px;
+    }
+
+    .article-title {
+        font-size: 25px;
+    }
+
+    .article-image {
+        max-height: 280px;
+    }
+
+    .article-description {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .article-body {
+        font-size: 15px;
+    }
+
+}
+
+/* =====================================
+   HIGHLIGHT.JS CODE BLOCKS
+===================================== */
+
+.article-body >pre,
+.article-body >pre >code {
+    white-space: pre !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    tab-size: 4;
+}
+
+.article-body >pre {
+    display: block;
+    overflow-x: auto;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.article-body >pre >code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+</style>
+
+<!-- Highlight.js theme -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+
+<!-- Highlight.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="damo.html" class="logo">
+            POST
+        </a>
+
+        <a href="damo.html" class="back-link">
+            ← All Articles
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     MAIN CONTENT
+===================================== -->
+
+<main class="container">
+
+    <div id="articleContainer">
+
+        <div class="loading">
+
+            <div class="loader"></div>
+
+            <h3>Loading article...</h3>
+
+            <p>Please wait while we retrieve your article.</p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="footer">
+
+    © 2026 POST. All rights reserved.
+
+</footer>
+
+
+<script>
+
+
+/*
+===============================================================
+  UNIVERSAL SMART TEXT → HTML ENGINE
+  -------------------------------------------------------------
+  autoConvertSmartText(input, options)
+
+  Designed for:
+    • AI responses
+    • Blog editors
+    • Markdown-like documents
+    • Chat applications
+    • Documentation
+    • Notes
+    • Code explanations
+    • Rich text conversion
+    • Prompt/output rendering
+
+  Architecture:
+    1. Normalize
+    2. Detect blocks
+    3. Detect inline syntax
+    4. Detect programming/code
+    5. Detect tables
+    6. Detect semantic structures
+    7. Sanitize
+    8. Return HTML + detection metadata
+
+  No external library required.
+===============================================================
+*/
+
+function createSmartTextEngine(userOptions = {}) {
+
+    const options = {
+        autoLinks: true,
+        detectEmail: true,
+        detectPhone: true,
+        detectDates: true,
+        detectNumbers: true,
+        detectEmoji: true,
+        detectHashtags: true,
+        detectMentions: true,
+        detectColors: true,
+        detectCommands: true,
+        detectJSON: true,
+        detectXML: true,
+        detectHTML: true,
+        detectMath: true,
+        detectCode: true,
+        detectTables: true,
+        detectTasks: true,
+        detectCallouts: true,
+        detectSpoilers: true,
+        detectMedia: true,
+        detectLanguage: true,
+        safeMode: true,
+        ...userOptions
+    };
+
+    const detections = [];
+
+    function detect(type, value, extra = {}) {
+        detections.push({
+            type,
+            value,
+            ...extra
+        });
+    }
+
+    /* =========================================================
+       BASIC UTILITIES
+    ========================================================= */
+
+    function escapeHTML(value) {
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+    }
+
+    function escapeAttr(value) {
+        return escapeHTML(value);
+    }
+
+    function normalize(input) {
+        return String(input ?? "")
+            .replace(/\r\n/g, "\n")
+            .replace(/\r/g, "\n")
+            .replace(/\u00A0/g, " ")
+            .replace(/\t/g, "    ");
+    }
+
+    function isBlank(line) {
+        return !line || !line.trim();
+    }
+
+    function safeURL(url) {
+        const value = String(url).trim();
+
+        if (/^(https?:\/\/|mailto:|tel:)/i.test(value)) {
+            return value;
+        }
+
+        return "#";
+    }
+
+    /* =========================================================
+       PROGRAMMING LANGUAGE DETECTION
+    ========================================================= */
+
+    const languageRules = [
+        ["javascript", /\b(const|let|var|function|=>|console\.log|document\.|window\.)\b/],
+        ["typescript", /\b(interface|type\s+\w+\s*=|enum|implements)\b/],
+        ["python", /\b(def|import|from\s+\w+\s+import|print\(|elif|None|True|False)\b/],
+        ["java", /\b(public\s+class|private\s+\w+|System\.out\.println|extends)\b/],
+        ["csharp", /\b(using\s+System|namespace\s+\w+|Console\.WriteLine|public\s+class)\b/],
+        ["cpp", /\b(#include\s*<|std::|cout\s*<<|cin\s*>>)\b/],
+        ["c", /\b(#include\s*<stdio|printf\(|scanf\(|malloc\()\b/],
+        ["php", /<\?php|\$\w+\s*=|echo\s+/],
+        ["ruby", /\b(def|end|puts|require)\b/],
+        ["go", /\b(package\s+main|func\s+\w+\(|fmt\.Print)\b/],
+        ["rust", /\b(fn\s+\w+\(|let\s+mut|println!\(|impl\s+\w+)\b/],
+        ["kotlin", /\b(fun\s+\w+\(|val\s+\w+|var\s+\w+|data\s+class)\b/],
+        ["swift", /\b(import\s+Foundation|func\s+\w+\(|let\s+\w+|var\s+\w+)\b/],
+        ["dart", /\b(void\s+main|import\s+'dart:|Widget|Future<)\b/],
+        ["sql", /\b(SELECT|INSERT|UPDATE|DELETE|CREATE\s+TABLE|ALTER\s+TABLE)\b/i],
+        ["bash", /(^|\n)\s*#!\/bin\/(bash|sh)|\b(echo|chmod|grep|awk|sed)\b/],
+        ["powershell", /\b(Get-|Set-|New-|Remove-|Write-Host)\b/],
+        ["html", /<\/?[a-z][^>]*>/i],
+        ["css", /[.#][\w-]+\s*\{[^}]*:[^}]*\}/],
+        ["json", /^\s*[\[{][\s\S]*[\]}]\s*$/],
+        ["xml", /<\?xml|<\/?[A-Za-z][^>]*>/],
+        ["graphql", /\b(query|mutation|subscription)\s+\w+\s*\{/],
+        ["yaml", /^\s*[\w.-]+\s*:\s+.+$/m],
+        ["dockerfile", /^\s*(FROM|RUN|COPY|CMD|ENTRYPOINT|WORKDIR)\s+/im]
+    ];
+
+    function detectLanguage(code, requested = "") {
+
+        if (requested) {
+            return requested.toLowerCase();
+        }
+
+        let best = {
+            language: "text",
+            score: 0
+        };
+
+        for (const [language, regex] of languageRules) {
+
+            const matches = code.match(regex);
+
+            if (matches) {
+
+                let score = matches.length;
+
+                if (language === "json") {
+                    try {
+                        JSON.parse(code);
+                        score += 10;
+                    } catch (_) {}
+                }
+
+                if (score > best.score) {
+                    best = {
+                        language,
+                        score
+                    };
+                }
+            }
+        }
+
+        detect("language", best.language, {
+            score: best.score
+        });
+
+        return best.language;
+    }
+
+    /* =========================================================
+       JSON / XML / HTML DETECTION
+    ========================================================= */
+
+    function tryJSON(value) {
+
+        if (!options.detectJSON) {
+            return false;
+        }
+
+        try {
+            const parsed = JSON.parse(value);
+
+            detect("json", parsed);
+
+            return true;
+
+        } catch (_) {
+            return false;
+        }
+    }
+
+    function looksLikeXML(value) {
+
+        if (!options.detectXML) return false;
+
+        const result =
+            /^\s*<\?xml/i.test(value) ||
+            /<([A-Za-z][\w:.-]*)(?:\s[^>]*)?>[\s\S]*<\/\1>/i.test(value);
+
+        if (result) {
+            detect("xml", value);
+        }
+
+        return result;
+    }
+
+    function looksLikeHTML(value) {
+
+        if (!options.detectHTML) return false;
+
+        const result =
+            /<!DOCTYPE\s+html>/i.test(value) ||
+            /<(html|head|body|div|span|section|article|p|script|style)[\s>]/i.test(value);
+
+        if (result) {
+            detect("html", value);
+        }
+
+        return result;
+    }
+
+    /* =========================================================
+       INLINE PARSER
+    ========================================================= */
+
+    function parseInline(input) {
+
+        let text = escapeHTML(input);
+
+        const protectedParts = [];
+
+        function protect(value) {
+            const id = protectedParts.length;
+
+            protectedParts.push(value);
+
+            return `@@SMART_PROTECTED_${id}@@`;
+        }
+
+        /* INLINE CODE */
+
+        text = text.replace(
+            /`([^`\n]+)`/g,
+            (_, code) => {
+
+                detect("inline-code", code);
+
+                return protect(
+                    "<code>" + code + "</code>"
+                );
+            }
+        );
+
+        /* AUTOLINK */
+
+        if (options.autoLinks) {
+
+            text = text.replace(
+                /(?<!\()\bhttps?:\/\/[^\s<]+/gi,
+                url => {
+
+                    const clean = url.replace(/[.,!?;:]$/, "");
+
+                    detect("url", clean);
+
+                    return protect(
+                        '<a href="' +
+                        escapeAttr(safeURL(clean)) +
+                        '" target="_blank" rel="noopener noreferrer">' +
+                        clean +
+                        "</a>"
+                    );
+                }
+            );
+        }
+
+        /* EMAIL */
+
+        if (options.detectEmail) {
+
+            text = text.replace(
+                /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi,
+                email => {
+
+                    detect("email", email);
+
+                    return protect(
+                        '<a href="mailto:' +
+                        escapeAttr(email) +
+                        '">' +
+                        email +
+                        "</a>"
+                    );
+                }
+            );
+        }
+
+        /* MARKDOWN LINKS */
+
+        text = text.replace(
+            /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+            (_, label, url) => {
+
+                detect("link", {
+                    label,
+                    url
+                });
+
+                return protect(
+                    '<a href="' +
+                    escapeAttr(safeURL(url)) +
+                    '" target="_blank" rel="noopener noreferrer">' +
+                    label +
+                    "</a>"
+                );
+            }
+        );
+
+        /* IMAGE */
+
+        if (options.detectMedia) {
+
+            text = text.replace(
+                /!\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)/g,
+                (_, alt, url) => {
+
+                    detect("image", {
+                        alt,
+                        url
+                    });
+
+                    return protect(
+                        '<img loading="lazy" src="' +
+                        escapeAttr(safeURL(url)) +
+                        '" alt="' +
+                        escapeAttr(alt) +
+                        '">'
+                    );
+                }
+            );
+        }
+
+        /* FIVE STAR */
+
+        text = text.replace(
+            /\*\*\*\*\*([^*\n]+)\*\*\*\*\*/g,
+            "<strong class=\"ultra-bold\">$1</strong>"
+        );
+
+        /* FOUR STAR */
+
+        text = text.replace(
+            /\*\*\*\*([^*\n]+)\*\*\*\*/g,
+            "<strong class=\"max-bold\">$1</strong>"
+        );
+
+        /* THREE STAR */
+
+        text = text.replace(
+            /\*\*\*([^*\n]+)\*\*\*/g,
+            "<strong><em>$1</em></strong>"
+        );
+
+        /* TWO STAR */
+
+        text = text.replace(
+            /\*\*([^*\n]+)\*\*/g,
+            "<strong>$1</strong>"
+        );
+
+        /* ONE STAR */
+
+        text = text.replace(
+            /(?<!\*)\*([^*\n]+)\*(?!\*)/g,
+            "<em>$1</em>"
+        );
+
+        /* UNDERSCORE BOLD */
+
+        text = text.replace(
+            /__([^_\n]+)__/g,
+            "<strong>$1</strong>"
+        );
+
+        /* UNDERSCORE ITALIC */
+
+        text = text.replace(
+            /(?<!_)_([^_\n]+)_(?!_)/g,
+            "<em>$1</em>"
+        );
+
+        /* STRIKE */
+
+        text = text.replace(
+            /~~([^~\n]+)~~/g,
+            "<del>$1</del>"
+        );
+
+        /* HIGHLIGHT */
+
+        text = text.replace(
+            /==([^=\n]+)==/g,
+            "<mark>$1</mark>"
+        );
+
+        /* INSERTED */
+
+        text = text.replace(
+            /\+\+([^+\n]+)\+\+/g,
+            "<ins>$1</ins>"
+        );
+
+        /* SUPERSCRIPT */
+
+        text = text.replace(
+            /\^([^^\n]+)\^/g,
+            "<sup>$1</sup>"
+        );
+
+        /* SUBSCRIPT */
+
+        text = text.replace(
+            /~([^~\n]+)~/g,
+            "<sub>$1</sub>"
+        );
+
+        /* SPOILER */
+
+        if (options.detectSpoilers) {
+
+            text = text.replace(
+                /\|\|([^|]+)\|\|/g,
+                (_, value) => {
+
+                    detect("spoiler", value);
+
+                    return (
+                        '<span class="spoiler" tabindex="0">' +
+                        value +
+                        "</span>"
+                    );
+                }
+            );
+        }
+
+        /* HASHTAG */
+
+        if (options.detectHashtags) {
+
+            text = text.replace(
+                /(^|\s)#([A-Za-z0-9_]+)/g,
+                (_, before, tag) => {
+
+                    detect("hashtag", tag);
+
+                    return (
+                        before +
+                        '<span class="hashtag">#' +
+                        tag +
+                        "</span>"
+                    );
+                }
+            );
+        }
+
+        /* MENTION */
+
+        if (options.detectMentions) {
+
+            text = text.replace(
+                /(^|\s)@([A-Za-z0-9_.-]+)/g,
+                (_, before, name) => {
+
+                    detect("mention", name);
+
+                    return (
+                        before +
+                        '<span class="mention">@' +
+                        name +
+                        "</span>"
+                    );
+                }
+            );
+        }
+
+        /* COLOR */
+
+        if (options.detectColors) {
+
+            text = text.replace(
+                /\[color=(#[0-9a-fA-F]{3,8}|[a-zA-Z]+)\]([\s\S]*?)\[\/color\]/g,
+                (_, color, value) => {
+
+                    detect("color", color);
+
+                    return (
+                        '<span style="color:' +
+                        escapeAttr(color) +
+                        '">' +
+                        value +
+                        "</span>"
+                    );
+                }
+            );
+        }
+
+        /* KEYBOARD SHORTCUT */
+
+        text = text.replace(
+            /\[kbd:([^\]]+)\]/gi,
+            (_, key) => {
+
+                detect("keyboard", key);
+
+                return "<kbd>" + key + "</kbd>";
+            }
+        );
+
+        /* COMMAND */
+
+        if (options.detectCommands) {
+
+            text = text.replace(
+                /(^|\s)\/([a-zA-Z][\w-]*)/g,
+                (_, before, command) => {
+
+                    detect("command", command);
+
+                    return (
+                        before +
+                        '<code class="command">/' +
+                        command +
+                        "</code>"
+                    );
+                }
+            );
+        }
+
+        /* EMOJI SHORTCODE */
+
+        const emojiMap = {
+            ":smile:": "😄",
+            ":laugh:": "😂",
+            ":heart:": "❤️",
+            ":fire:": "🔥",
+            ":rocket:": "🚀",
+            ":check:": "✅",
+            ":warning:": "⚠️",
+            ":star:": "⭐",
+            ":ok:": "👌",
+            ":thumbsup:": "👍",
+            ":sad:": "😢",
+            ":love:": "😍"
+        };
+
+        if (options.detectEmoji) {
+
+            text = text.replace(
+                /:[a-zA-Z0-9_+-]+:/g,
+                shortcode => {
+
+                    if (!emojiMap[shortcode]) {
+                        return shortcode;
+                    }
+
+                    detect("emoji", shortcode);
+
+                    return emojiMap[shortcode];
+                }
+            );
+        }
+
+        /* CHECKBOX */
+
+        text = text.replace(
+            /\[x\]/gi,
+            '<input type="checkbox" checked disabled>'
+        );
+
+        text = text.replace(
+            /\[\s\]/g,
+            '<input type="checkbox" disabled>'
+        );
+
+        /* RESTORE */
+
+        text = text.replace(
+            /@@SMART_PROTECTED_(\d+)@@/g,
+            (_, index) => protectedParts[Number(index)]
+        );
+
+        return text;
+    }
+
+    /* =========================================================
+       TABLE PARSER
+    ========================================================= */
+
+    function splitTableRow(row) {
+
+        let value = row.trim();
+
+        if (value.startsWith("|")) {
+            value = value.slice(1);
+        }
+
+        if (value.endsWith("|")) {
+            value = value.slice(0, -1);
+        }
+
+        return value
+            .split("|")
+            .map(x => x.trim());
+    }
+
+    function isTableSeparator(line) {
+
+        return /^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?$/
+            .test(line.trim());
+    }
+
+    function parseTable(lines, index) {
+
+        if (!options.detectTables) {
+            return null;
+        }
+
+        if (
+            index + 1 >= lines.length ||
+            !lines[index].includes("|") ||
+            !isTableSeparator(lines[index + 1])
+        ) {
+            return null;
+        }
+
+        const headers = splitTableRow(lines[index]);
+        const separator = splitTableRow(lines[index + 1]);
+
+        let html = "<table>\n<thead>\n<tr>\n";
+
+        headers.forEach((header, column) => {
+
+            let align = "";
+
+            if (separator[column]) {
+
+                const value = separator[column];
+
+                if (
+                    value.startsWith(":") &&
+                    value.endsWith(":")
+                ) {
+                    align = ' style="text-align:center"';
+                } else if (value.startsWith(":")) {
+                    align = ' style="text-align:left"';
+                } else if (value.endsWith(":")) {
+                    align = ' style="text-align:right"';
+                }
+            }
+
+            html +=
+                "<th" +
+                align +
+                ">" +
+                parseInline(header) +
+                "</th>\n";
+        });
+
+        html += "</tr>\n</thead>\n<tbody>\n";
+
+        let i = index + 2;
+
+        while (
+            i < lines.length &&
+            lines[i].includes("|")
+        ) {
+
+            const row = splitTableRow(lines[i]);
+
+            html += "<tr>\n";
+
+            for (let c = 0; c < headers.length; c++) {
+
+                html +=
+                    "<td>" +
+                    parseInline(row[c] || "") +
+                    "</td>\n";
+            }
+
+            html += "</tr>\n";
+
+            i++;
+        }
+
+        html += "</tbody>\n</table>\n";
+
+        const tableRows = i - index - 2;
+        const tableLabel = "DATA TABLE · " + headers.length + " COLUMNS · " + tableRows + " ROWS";
+        html =
+            '<section class="smart-table-block">' +
+                '<div class="smart-table-toolbar">' +
+                    '<span class="smart-table-title">' + escapeHTML(tableLabel) + '</span>' +
+                    '<div class="smart-table-actions">' +
+                        '<button type="button" onclick="copySmartTable(this)">COPY TABLE</button>' +
+                        '<button type="button" onclick="downloadSmartTable(this)">DOWNLOAD CSV</button>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="smart-table-scroll">' + html + '</div>' +
+            '</section>\n';
+
+        detect("table", {
+            columns: headers.length,
+            rows: tableRows
+        });
+
+        return {
+            html,
+            next: i
+        };
+    }
+
+    /* =========================================================
+       CALLOUT DETECTION
+    ========================================================= */
+
+    function parseCallout(line) {
+
+        const match = line.match(
+            /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION|SUCCESS|ERROR|INFO|QUESTION)\]\s*(.*)$/i
+        );
+
+        if (!match || !options.detectCallouts) {
+            return null;
+        }
+
+        const type = match[1].toLowerCase();
+        const content = match[2];
+
+        detect("callout", type);
+
+        return (
+            '<aside class="callout callout-' +
+            escapeAttr(type) +
+            '">' +
+            '<strong>' +
+            type.toUpperCase() +
+            "</strong>" +
+            "<div>" +
+            parseInline(content) +
+            "</div>" +
+            "</aside>"
+        );
+    }
+
+    /* =========================================================
+       SPECIAL BLOCK DETECTION
+    ========================================================= */
+
+    function parseSpecialBlock(lines, index) {
+
+        const line = lines[index].trim();
+
+        /* JSON */
+
+        if (
+            options.detectJSON &&
+            (/^\s*[\[{]/.test(line))
+        ) {
+
+            const collected = [];
+
+            let depth = 0;
+
+            for (
+                let i = index;
+                i < lines.length;
+                i++
+            ) {
+
+                collected.push(lines[i]);
+
+                for (const ch of lines[i]) {
+                    if (ch === "{" || ch === "[") depth++;
+                    if (ch === "}" || ch === "]") depth--;
+                }
+
+                if (depth <= 0) break;
+            }
+
+            const value = collected.join("\n");
+
+            if (tryJSON(value)) {
+
+                return {
+                    html:
+                        "<pre><code class=\"language-json\">" +
+                        escapeHTML(
+                            JSON.stringify(
+                                JSON.parse(value),
+                                null,
+                                2
+                            )
+                        ) +
+                        "</code></pre>\n",
+
+                    next: index + collected.length
+                };
+            }
+        }
+
+        /* XML / HTML */
+
+        if (
+            options.detectXML ||
+            options.detectHTML
+        ) {
+
+            if (
+                looksLikeXML(line) ||
+                looksLikeHTML(line)
+            ) {
+
+                detect("markup", line);
+
+                return {
+                    html:
+                        "<pre><code class=\"language-html\">" +
+                        escapeHTML(line) +
+                        "</code></pre>\n",
+
+                    next: index + 1
+                };
+            }
+        }
+
+        return null;
+    }
+
+    /* =========================================================
+       BLOCK PARSER
+    ========================================================= */
+
+    function parseBlocks(input) {
+
+        const lines = normalize(input).split("\n");
+
+        let html = "";
+
+        let paragraph = [];
+
+        let list = [];
+
+        let listType = null;
+
+        function flushParagraph() {
+
+            if (!paragraph.length) return;
+
+            const value = paragraph.join("\n");
+
+            html +=
+                "<p>" +
+                parseInline(value)
+                    .replace(/\n/g, "<br>\n") +
+                "</p>\n";
+
+            paragraph = [];
+        }
+
+        function flushList() {
+
+            if (!list.length) return;
+
+            html +=
+                listType === "ol"
+                    ? "<ol>\n"
+                    : "<ul>\n";
+
+            for (const item of list) {
+
+                html +=
+                    "<li>" +
+                    parseInline(item) +
+                    "</li>\n";
+            }
+
+            html +=
+                listType === "ol"
+                    ? "</ol>\n"
+                    : "</ul>\n";
+
+            list = [];
+            listType = null;
+        }
+
+        let i = 0;
+
+        while (i < lines.length) {
+
+            const raw = lines[i];
+
+            const line = raw.trim();
+
+            /* EMPTY */
+
+            if (!line) {
+
+                flushParagraph();
+                flushList();
+
+                i++;
+                continue;
+            }
+
+            /* FENCED CODE */
+
+            const codeMatch =
+                line.match(/^(`{3,}|~{3,})\s*([A-Za-z0-9_+#.-]*)\s*$/);
+
+            if (codeMatch && options.detectCode) {
+
+                flushParagraph();
+                flushList();
+
+                const fence = codeMatch[1];
+                const fenceChar = fence.charAt(0);
+                const requestedLanguage = codeMatch[2] || "";
+                const code = [];
+
+                i++;
+
+                while (i < lines.length) {
+                    const closing = lines[i].trim();
+                    const closingMatch = closing.match(/^(`{3,}|~{3,})\s*$/);
+                    if (
+                        closingMatch &&
+                        closingMatch[1].charAt(0) === fenceChar &&
+                        closingMatch[1].length >= fence.length
+                    ) {
+                        break;
+                    }
+                    code.push(lines[i]);
+                    i++;
+                }
+
+                const source = code.join("\n");
+                const language = detectLanguage(source, requestedLanguage);
+                const languageNames = {
+                    javascript: "JavaScript", typescript: "TypeScript", python: "Python",
+                    html: "HTML", css: "CSS", json: "JSON", xml: "XML", sql: "SQL",
+                    bash: "Bash", shell: "Shell", powershell: "PowerShell", plaintext: "Plain Text",
+                    text: "Plain Text", csharp: "C#", cpp: "C++", yaml: "YAML", markdown: "Markdown"
+                };
+                const languageLabel = languageNames[language] ||
+                    (language ? language.charAt(0).toUpperCase() + language.slice(1) : "Plain Text");
+
+                detect("code-block", {
+                    language,
+                    lines: code.length,
+                    characters: source.length
+                });
+
+                html +=
+                    '<section class="smart-code-block" data-code-language="' +
+                    escapeAttr(language || "plaintext") +
+                    '">' +
+                    '<div class="smart-code-toolbar">' +
+                    '<span class="smart-code-language">' +
+                    escapeHTML(languageLabel) +
+                    '</span>' +
+                    '<div class="smart-code-actions">' +
+                    '<button type="button" onclick="copySmartCode(this)">COPY</button>' +
+                    '<button type="button" onclick="downloadSmartCode(this)">DOWNLOAD</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '<pre><code class="language-' +
+                    escapeAttr(language || "plaintext") +
+                    '">' +
+                    escapeHTML(source) +
+                    '</code></pre>' +
+                    '</section>\n';
+
+                if (i < lines.length) {
+                    const closing = lines[i].trim();
+                    const closingMatch = closing.match(/^(`{3,}|~{3,})\s*$/);
+                    if (
+                        closingMatch &&
+                        closingMatch[1].charAt(0) === fenceChar &&
+                        closingMatch[1].length >= fence.length
+                    ) {
+                        i++;
+                    }
+                }
+
+                continue;
+            }
+
+            /* HEADINGS */
+
+            const heading =
+                line.match(
+                    /^(#{1,6})\s+(.+?)(?:\s+#+)?$/
+                );
+
+            if (heading) {
+
+                flushParagraph();
+                flushList();
+
+                const level =
+                    heading[1].length;
+
+                const content =
+                    heading[2];
+
+                detect("heading", {
+                    level,
+                    text: content
+                });
+
+                html +=
+                    "<h" +
+                    level +
+                    ">" +
+                    parseInline(content) +
+                    "</h" +
+                    level +
+                    ">\n";
+
+                i++;
+                continue;
+            }
+
+            /* CALLOUT */
+
+            const callout =
+                parseCallout(line);
+
+            if (callout) {
+
+                flushParagraph();
+                flushList();
+
+                html += callout + "\n";
+
+                i++;
+                continue;
+            }
+
+            /* TABLE */
+
+            const table =
+                parseTable(lines, i);
+
+            if (table) {
+
+                flushParagraph();
+                flushList();
+
+                html += table.html;
+
+                i = table.next;
+
+                continue;
+            }
+
+            /* HORIZONTAL RULE */
+
+            if (
+                /^-{3,}$/.test(line) ||
+                /^_{3,}$/.test(line) ||
+                /^\*{3,}$/.test(line)
+            ) {
+
+                flushParagraph();
+                flushList();
+
+                detect("horizontal-rule");
+
+                html += "<hr>\n";
+
+                i++;
+                continue;
+            }
+
+            /* BLOCKQUOTE */
+
+            if (/^>\s?/.test(line)) {
+
+                flushParagraph();
+                flushList();
+
+                const quote = [];
+
+                while (
+                    i < lines.length &&
+                    /^>\s?/.test(lines[i].trim())
+                ) {
+
+                    quote.push(
+                        lines[i]
+                            .trim()
+                            .replace(/^>\s?/, "")
+                    );
+
+                    i++;
+                }
+
+                detect("blockquote");
+
+                html +=
+                    "<blockquote>\n" +
+                    "<p>" +
+                    parseInline(
+                        quote.join("\n")
+                    ).replace(/\n/g, "<br>\n") +
+                    "</p>\n" +
+                    "</blockquote>\n";
+
+                continue;
+            }
+
+            /* UNORDERED LIST */
+
+            const unordered =
+                line.match(/^[-*+]\s+(?!\[[ xX]\]\s)(.+)$/);
+
+            if (unordered) {
+
+                flushParagraph();
+
+                if (listType !== "ul") {
+                    flushList();
+                    listType = "ul";
+                }
+
+                list.push(unordered[1]);
+
+                detect("unordered-list-item");
+
+                i++;
+                continue;
+            }
+
+            /* ORDERED LIST */
+
+            const ordered =
+                line.match(/^\d+[.)]\s+(.+)$/);
+
+            if (ordered) {
+
+                flushParagraph();
+
+                if (listType !== "ol") {
+                    flushList();
+                    listType = "ol";
+                }
+
+                list.push(ordered[1]);
+
+                detect("ordered-list-item");
+
+                i++;
+                continue;
+            }
+
+            /* TASK */
+
+            const task =
+                line.match(
+                    /^[-*+]\s+\[([ xX])\]\s+(.+)$/
+                );
+
+            if (task && options.detectTasks) {
+
+                flushParagraph();
+
+                const checked =
+                    task[1].toLowerCase() === "x";
+
+                html +=
+                    '<div class="task">' +
+                    '<input type="checkbox"' +
+                    (checked ? " checked" : "") +
+                    " disabled>" +
+                    "<span>" +
+                    parseInline(task[2]) +
+                    "</span>" +
+                    "</div>\n";
+
+                detect("task", {
+                    checked,
+                    text: task[2]
+                });
+
+                i++;
+                continue;
+            }
+
+            /* SPECIAL BLOCK */
+
+            const special =
+                parseSpecialBlock(lines, i);
+
+            if (special) {
+
+                flushParagraph();
+                flushList();
+
+                html += special.html;
+
+                i = special.next;
+
+                continue;
+            }
+
+            /* NORMAL TEXT */
+
+            paragraph.push(raw);
+
+            i++;
+        }
+
+        flushParagraph();
+        flushList();
+
+        return html.trim();
+    }
+
+    /* =========================================================
+       PUBLIC API
+    ========================================================= */
+
+    function convert(input) {
+
+        detections.length = 0;
+
+        const source = normalize(input);
+
+        const html = parseBlocks(source);
+
+        return {
+            html,
+            detections: [...detections],
+
+            statistics: {
+                characters: source.length,
+                words: source
+                    .trim()
+                    ? source.trim().split(/\s+/).length
+                    : 0,
+
+                lines: source
+                    ? source.split("\n").length
+                    : 0,
+
+                detectedTypes:
+                    [...new Set(
+                        detections.map(
+                            x => x.type
+                        )
+                    )],
+
+                detectionCount:
+                    detections.length
+            }
+        };
+    }
+
+    return {
+        convert,
+        detectLanguage,
+        parseInline
+    };
+}
+
+
+/* =============================================================
+   SIMPLE ONE-FUNCTION API
+============================================================= */
+
+function autoConvertSmartText(input, options = {}) {
+
+    const engine =
+        createSmartTextEngine(options);
+
+    return engine.convert(input);
+}
+
+/* =============================================================
+   SMART TEXT HTML OUTPUT
+   The converter returns { html, detections, statistics }.
+   Return only the generated HTML so formatting can render.
+============================================================= */
+function getSmartTextHTML(input, options = {}) {
+
+    if (input === null || input === undefined || String(input).trim() === "") {
+        return "";
+    }
+
+    try {
+        const converted = autoConvertSmartText(input, options);
+
+        if (converted && typeof converted.html === "string") {
+            return converted.html;
+        }
+
+        // Backward compatibility if the converter ever returns a string.
+        if (typeof converted === "string") {
+            return escapeHTML(converted);
+        }
+    } catch (error) {
+        console.error("Smart Text Conversion Error:", error);
+    }
+
+    return escapeHTML(input);
+}
+
+/* =============================================================
+   CODE BLOCK COPY + DOWNLOAD ACTIONS
+============================================================= */
+function getSmartCodeElement(button) {
+    const wrapper = button && button.closest(".smart-code-block");
+    return wrapper ? wrapper.querySelector("pre code") : null;
+}
+
+async function copySmartCode(button) {
+    const code = getSmartCodeElement(button);
+    if (!code) return;
+
+    const originalLabel = button.textContent;
+    try {
+        const value = code.textContent || "";
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+        } else {
+            const temporary = document.createElement("textarea");
+            temporary.value = value;
+            temporary.style.position = "fixed";
+            temporary.style.opacity = "0";
+            document.body.appendChild(temporary);
+            temporary.select();
+            const copied = document.execCommand("copy");
+            temporary.remove();
+            if (!copied) throw new Error("Copy command was blocked");
+        }
+        button.textContent = "Copied!";
+    } catch (error) {
+        console.error("Code copy failed:", error);
+        button.textContent = "Copy failed";
+    }
+    setTimeout(() => { button.textContent = originalLabel; }, 1600);
+}
+
+function downloadSmartCode(button) {
+    const code = getSmartCodeElement(button);
+    if (!code) return;
+
+    const wrapper = button.closest(".smart-code-block");
+    const language = (wrapper && wrapper.dataset.codeLanguage) || "txt";
+    const extensionMap = {
+        javascript: "js", js: "js", typescript: "ts", ts: "ts",
+        html: "html", xml: "xml", css: "css", scss: "scss",
+        python: "py", py: "py", java: "java", c: "c", cpp: "cpp",
+        csharp: "cs", csharp: "cs", php: "php", ruby: "rb",
+        go: "go", rust: "rs", sql: "sql", json: "json",
+        yaml: "yml", yml: "yml", bash: "sh", shell: "sh",
+        powershell: "ps1", markdown: "md", plaintext: "txt",
+        text: "txt"
+    };
+    const extension = extensionMap[language] || language || "txt";
+    const blob = new Blob([code.textContent || ""], {
+        type: "text/plain;charset=utf-8"
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "code-snippet." + extension;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+}
+
+/* =============================================================
+   SMART TABLE COPY + CSV DOWNLOAD ACTIONS
+============================================================= */
+function getSmartTableElement(button) {
+    const wrapper = button && button.closest(".smart-table-block");
+    return wrapper ? wrapper.querySelector("table") : null;
+}
+
+function smartTableToTSV(table) {
+    return Array.from(table.rows).map(row =>
+        Array.from(row.cells).map(cell =>
+            (cell.innerText || cell.textContent || "").replace(/\s+/g, " ").trim()
+        ).join("\t")
+    ).join("\n");
+}
+
+function smartTableToCSV(table) {
+    return Array.from(table.rows).map(row =>
+        Array.from(row.cells).map(cell => {
+            const value = (cell.innerText || cell.textContent || "").replace(/\s+/g, " ").trim();
+            return '"' + value.replace(/"/g, '""') + '"';
+        }).join(",")
+    ).join("\r\n");
+}
+
+async function copySmartTable(button) {
+    const table = getSmartTableElement(button);
+    if (!table) return;
+    const originalLabel = button.textContent;
+    try {
+        const value = smartTableToTSV(table);
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+        } else {
+            const temporary = document.createElement("textarea");
+            temporary.value = value;
+            temporary.style.position = "fixed";
+            temporary.style.opacity = "0";
+            document.body.appendChild(temporary);
+            temporary.select();
+            const copied = document.execCommand("copy");
+            temporary.remove();
+            if (!copied) throw new Error("Copy command was blocked");
+        }
+        button.textContent = "COPIED!";
+    } catch (error) {
+        console.error("Table copy failed:", error);
+        button.textContent = "COPY FAILED";
+    }
+    setTimeout(() => { button.textContent = originalLabel; }, 1600);
+}
+
+function downloadSmartTable(button) {
+    const table = getSmartTableElement(button);
+    if (!table) return;
+    const csv = "\uFEFF" + smartTableToCSV(table);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "article-table.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const originalLabel = button.textContent;
+    button.textContent = "DOWNLOADED!";
+    setTimeout(() => { button.textContent = originalLabel; }, 1600);
+}
+
+/* =============================================================
+   HIGHLIGHT.JS INITIALIZER
+   Run this AFTER the article HTML is inserted into the page.
+============================================================= */
+function applyHighlightJS(container = articleContainer) {
+
+    if (!container || !window.hljs) {
+        console.warn("Highlight.js is unavailable. Check your internet connection or CDN access.");
+        return;
+    }
+
+    const codeBlocks = container.querySelectorAll("pre code");
+
+    codeBlocks.forEach((code) => {
+        try {
+            // Avoid highlighting the same block more than once.
+            if (code.dataset.highlighted === "yes") {
+                delete code.dataset.highlighted;
+            }
+
+            // Highlight.js uses language-* classes generated by Smart Text.
+            // Fall back to automatic language detection if the class is absent.
+            const languageClass = (code.className.match(/\blanguage-([\w-]+)/) || [])[1];
+            if (languageClass && languageClass !== "text" && languageClass !== "plaintext" &&
+                !window.hljs.getLanguage(languageClass)) {
+                code.removeAttribute("class");
+            }
+            window.hljs.highlightElement(code);
+        } catch (error) {
+            console.error("Highlight.js error:", error, code);
+        }
+    });
+}
+
+/* =====================================
+   GOOGLE APPS SCRIPT API
+===================================== */
+
+// Use the SAME deployment ID as damo.html.
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbz4ijwxCod0yeyeUUtLacBudoOl6X74MBqbQDHPRr578Mik9nXGhpoKs7Da31XWRCJs/exec?action=list&sheet=Data&sort=ID&order=asc";
+// API pagination batch size.
+
+const API_BATCH_SIZE = 100;
+
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const articleContainer =
+document.getElementById("articleContainer");
+
+
+/* =====================================
+   GET ARTICLE ID
+===================================== */
+
+const urlParams = new URLSearchParams(
+    window.location.search
+);
+
+const requestedID = urlParams.get("ID");
+
+
+/* =====================================
+   COLUMN DETECTION
+===================================== */
+
+function getValue(item, names) {
+
+    const key = Object.keys(item).find(k =>
+        names.includes(k.trim().toUpperCase())
+    );
+
+    return key !== undefined ? item[key] : "";
+
+}
+
+
+/* =====================================
+   DESCRIPTION DETECTION
+===================================== */
+
+function getDescription(item) {
+
+    const normal = getValue(item, [
+        "DESCRIPTION",
+        "DESC"
+    ]);
+
+    if (normal !== "") {
+        return normal;
+    }
+
+    const excluded = [
+        "ID",
+        "TITEL",
+        "TITLE",
+        "CONTENT",
+        "IMAGE URL",
+        "IMAGE_URL",
+        "CATEGORY",
+        "DATE",
+        "DESCRIPTION",
+        "DESC"
+    ];
+
+    const key = Object.keys(item).find(k =>
+        !excluded.includes(k.trim().toUpperCase())
+    );
+
+    return key ? item[key] : "";
+
+}
+
+
+/* =====================================
+   ESCAPE HTML
+===================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "").replace(
+        /[&<>"']/g,
+        char => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[char]
+    );
+
+}
+
+/* =============================================================
+   ADDITIVE: MULTIPLE CATEGORY BADGES
+   Splits a comma-separated CATEGORY cell into separate badges.
+============================================================= */
+function renderCategoryBadges(value) {
+    const categories = String(value ?? "")
+        .split(",")
+        .map(category => category.trim())
+        .filter(Boolean);
+
+    const finalCategories = categories.length ? categories : ["General"];
+
+    return `
+        <div class="category-list" aria-label="Article categories">
+            ${finalCategories.map(category => `
+                <span class="category">${escapeHTML(category)}</span>
+            `).join("")}
+        </div>
+    `;
+}
+
+/* =============================================================
+   ADDITIVE: MIXED HTML + <smart> CONTENT
+   - HTML outside <smart> tags is inserted as real HTML.
+   - Only the inner text of <smart>...</smart> is converted
+     through getSmartTextHTML().
+   - Normal HTML, inline styles, buttons, links, tables, etc.
+     are rendered by the browser without escaping.
+============================================================= */
+function renderMixedSmartContent(value) {
+    const source = String(value ?? "");
+    if (!source) return "";
+
+    // Supports optional attributes and whitespace in the smart tag.
+    const smartTagPattern = /<smart\b[^>]*>([\s\S]*?)<\/smart\s*>/gi;
+    let output = "";
+    let lastIndex = 0;
+    let match;
+
+    while ((match = smartTagPattern.exec(source)) !== null) {
+        // Preserve the normal HTML before this smart section exactly as supplied.
+        output += source.slice(lastIndex, match.index);
+
+        // Convert only the contents inside this smart section.
+        output += getSmartTextHTML(match[1]);
+
+        lastIndex = smartTagPattern.lastIndex;
+    }
+
+    // Preserve the remaining normal HTML exactly as supplied.
+    output += source.slice(lastIndex);
+    return output;
+}
+
+/* =============================================================
+   ADDITIVE: ACTIVATE SCRIPTS INSIDE ARTICLE CONTENT
+   Scripts inserted through innerHTML do not execute automatically.
+   Recreate them after insertion so intentional article scripts work.
+   Only use this feature with trusted content from your own editor/API.
+============================================================= */
+function activateArticleScripts(container) {
+    if (!container) return;
+
+    const scripts = Array.from(container.querySelectorAll("script"));
+
+    scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+
+        Array.from(oldScript.attributes).forEach(attribute => {
+            newScript.setAttribute(attribute.name, attribute.value);
+        });
+
+        // Preserve execution order for external scripts unless explicitly async.
+        if (oldScript.src && !oldScript.hasAttribute("async")) {
+            newScript.async = false;
+        }
+
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+}
+
+/* =====================================
+   VALIDATE IMAGE URL
+===================================== */
+
+function validImageURL(value) {
+
+    try {
+
+        const parsed = new URL(String(value));
+
+        if (
+            parsed.protocol === "https:" ||
+            parsed.protocol === "http:"
+        ) {
+            return parsed.href;
+        }
+
+    } catch(error) {}
+
+    return "";
+
+}
+
+
+/* =====================================
+   FORMAT DATE
+===================================== */
+
+function formatDate(value) {
+
+    if (!value) {
+        return "Date unavailable";
+    }
+
+    const date = new Date(value);
+
+    if (isNaN(date.getTime())) {
+        return String(value);
+    }
+
+    return date.toLocaleDateString("en-IN", {
+
+        day: "2-digit",
+
+        month: "long",
+
+        year: "numeric"
+
+    });
+
+}
+
+
+/* =====================================
+   LOADING
+===================================== */
+
+function showLoading(message = "Loading article...") {
+
+    articleContainer.innerHTML = `
+
+        <div class="loading">
+
+            <div class="loader"></div>
+
+            <h3>${escapeHTML(message)}</h3>
+
+            <p>Please wait while we retrieve your article.</p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================
+   ERROR DISPLAY
+===================================== */
+
+function showError(title, message) {
+
+    articleContainer.innerHTML = `
+
+        <div class="error-box">
+
+            <h2>${escapeHTML(title)}</h2>
+
+            <p>${escapeHTML(message)}</p>
+
+            <a href="damo.html">
+                ← Return to Articles
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================
+   FETCH ARTICLE BY ID
+===================================== */
+
+async function findArticleByID(targetID) {
+
+    let offset = 0;
+
+    let hasMore = true;
+
+    let previousBatchSignature = "";
+
+    while (hasMore) {
+
+        const apiURL = new URL(API_URL);
+
+        apiURL.searchParams.set("action", "list");
+
+        apiURL.searchParams.set("sheet", "Data");
+
+        apiURL.searchParams.set("sort", "ID");
+
+        apiURL.searchParams.set("order", "asc");
+
+        apiURL.searchParams.set("offset", offset);
+
+        apiURL.searchParams.set("limit", API_BATCH_SIZE);
+
+        showLoading(
+            "Loading Article..."
+        );
+
+        const response = await fetch(apiURL.toString(), {
+
+            method: "GET",
+
+            redirect: "follow",
+
+            cache: "no-store"
+
+        });
+
+        if (!response.ok) {
+
+            throw new Error(
+                "HTTP Error: " + response.status
+            );
+
+        }
+
+        const result = await response.json();
+
+        // console.log("API RESPONSE:", result);
+
+        if (result.success !== true) {
+
+            throw new Error(
+                result.message || "API request failed."
+            );
+
+        }
+
+        if (!Array.isArray(result.data)) {
+
+            throw new Error(
+                "Invalid API response: data must be an array."
+            );
+
+        }
+
+        const records = result.data;
+
+        if (records.length === 0) {
+            break;
+        }
+
+        // Search the current batch.
+
+        const article = records.find(item => {
+
+            const recordID = getValue(item, ["ID"]);
+
+            return String(recordID).trim() ===
+                   String(targetID).trim();
+
+        });
+
+        // Return immediately if the requested article is found.
+
+        if (article) {
+
+            return article;
+
+        }
+
+        // Detect APIs that ignore offset.
+
+        const batchSignature = JSON.stringify(
+            records.map(item => getValue(item, ["ID"]))
+        );
+
+        if (
+            offset > 0 &&
+            batchSignature === previousBatchSignature
+        ) {
+
+            throw new Error(
+                "The API is returning duplicate batches. Check that your Apps Script supports offset pagination."
+            );
+
+        }
+
+        previousBatchSignature = batchSignature;
+
+        // Move to the next batch.
+
+        offset += records.length;
+
+        // Continue based on API has_more.
+
+        if (typeof result.has_more === "boolean") {
+
+            hasMore =
+                result.has_more && records.length > 0;
+
+        } else {
+
+            hasMore =
+                records.length === API_BATCH_SIZE;
+
+        }
+
+    }
+
+    return null;
+
+}
+
+
+/* =====================================
+   DISPLAY ARTICLE
+===================================== */
+
+function displayArticle(item) {
+
+    const id = getValue(item, ["ID"]);
+
+    const title =
+        getValue(item, ["TITEL", "TITLE"]) ||
+        "Untitled Article";
+
+    const category =
+        getValue(item, ["CATEGORY"]) ||
+        "General";
+
+    const description = getDescription(item);
+
+    const content = getValue(item, ["CONTENT"]);
+    const date = getValue(item, ["DATE"]);
+
+    const imageURL = validImageURL(
+        getValue(item, ["IMAGE URL", "IMAGE_URL"])
+    );
+
+    const image = imageURL
+        ? `
+
+            <img
+
+                class="article-image"
+
+                src="${escapeHTML(imageURL)}"
+
+                alt="${escapeHTML(title)}"
+
+                onerror="this.style.display='none'"
+
+            >
+
+        `
+        : "";
+
+    document.title =
+        title + " | POST";
+
+    articleContainer.innerHTML = `
+
+        <article class="article">
+
+            ${image}
+
+            <div class="article-content">
+
+                ${renderCategoryBadges(category)}
+
+                <h1 class="article-title">
+
+                    ${escapeHTML(title)}
+
+                </h1>
+
+                <div class="article-meta">
+
+                    <span>
+                        📅 ${escapeHTML(formatDate(date))}
+                    </span>
+
+                    <span>
+                        📂 ${escapeHTML(category)}
+                    </span>
+
+                    <span>
+                        ID: ${escapeHTML(id)}
+                    </span>
+
+                </div>
+
+                <div class="article-description">
+
+                    ${escapeHTML(
+                        description || "No description available."
+                    )}
+
+                </div>
+
+                <div class="article-body">
+
+                    ${renderMixedSmartContent(content) || "<p>No article content available.</p>"}
+
+                </div>
+
+                <div class="article-footer">
+
+                    <a
+                        href="damo.html"
+                        class="back-button"
+                    >
+                        ← Back to Articles
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `;
+
+    // Activate trusted article scripts, then highlight dynamically inserted code.
+    activateArticleScripts(articleContainer);
+    applyHighlightJS(articleContainer);
+
+}
+
+
+/* =====================================
+   MAIN FUNCTION
+===================================== */
+
+async function loadArticle() {
+
+    try {
+
+        if (!requestedID) {
+
+            showError(
+                "Invalid Article ID",
+                "No article ID was provided in the URL."
+            );
+
+            return;
+
+        }
+
+        if (API_URL.includes("YOUR_DEPLOYMENT_ID")) {
+
+            throw new Error(
+                "Please insert your real Google Apps Script deployment ID."
+            );
+
+        }
+
+        const article = await findArticleByID(requestedID);
+
+        if (!article) {
+
+            showError(
+                "Article Not Found",
+                "No article found with ID: " + requestedID
+            );
+
+            return;
+
+        }
+
+        displayArticle(article);
+
+    }
+
+    catch(error) {
+
+        console.error("ARTICLE ERROR:", error);
+
+        showError(
+            "Unable to Load Article",
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================
+   INITIALIZE
+===================================== */
+
+loadArticle();
+
+</script>
+
+</body>
+</html>

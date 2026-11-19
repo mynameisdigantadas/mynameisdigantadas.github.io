@@ -1,1571 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Specify document mode for different versions of Internet Explorer -->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=11">
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+        <meta http-equiv="X-UA-Compatible" content="IE=9"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"> -->
+      
+        <link rel="stylesheet" href="assert\bootstrap-5.0.2\dist\css\bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="assert\bulma\css\bulma.min.css" /> -->
+        <!-- <link rel="stylesheet" href="assert\bulma\bulma.sass" /> -->
+        <link rel="stylesheet" href="assert\Foundation-Sites-CSS\css\foundation.css" />
+        <link rel="stylesheet" href="assert\Foundation-Sites-CSS\css\foundation.min.css" />
+        <link rel="stylesheet" href="assert\Skeleton-2.0.4\css\normalize.css" />
+        <link rel="stylesheet" href="assert\Skeleton-2.0.4\css\skeleton.css" />
+        <!-- <link rel="stylesheet" href="assert\datatable\datatables.css" /> -->
+        <!-- <link rel="stylesheet" href="assert\datatable\datatables.min.css" /> -->
+        <link rel="stylesheet" href="assert\mdb\css\mdb.min.css" />
+        <!-- <link rel="stylesheet" href="assert\mdb\css\mdb.rtl.min.css" /> -->
+        <!-- <script src="assert\Foundation-Sites-CSS/js/app.js"></script>
+        <script src="assert\Foundation-Sites-CSS/js/vendor/foundation.js"></script>
+        <script src="assert\Foundation-Sites-CSS/js/vendor/foundation.min.js"></script>
+        <script src="assert\Foundation-Sites-CSS/js/vendor/jquery.js"></script>
+        <script src="assert\Foundation-Sites-CSS/js/vendor/what-input.js"></script>
+        <script src="assert\mdb/js/mdb.es.min.js"></script>
+        <script src="assert\bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+        <script src="assert\mdb/js/mdb.umd.min.js"></script>
+        <script src="assert\datatable\jquery.dataTables.min.js"></script>
+        <script src="assert\datatable\datatables.js"></script>
+        <script src="assert\datatable\datatables.min.js"></script>
+        <script src="assert\ckeditor\ckeditor.js"></script> -->
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+      
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-<head>
-    <!-- ================= BASIC META ================= -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Latest Articles | POST</title>
-
-    <meta name="description" content="Explore the latest articles, technology updates and educational content.">
-
-    <meta name="keywords" content="HTML, CSS, JavaScript, Website">
-    <meta name="author" content="Your Name">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- ================= THEME ================= -->
-    <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="light dark">
-
-    <!-- ================= SEO ================= -->
-    <link rel="canonical" href="https://example.com/">
-
-    <!-- ================= FAVICON ================= -->
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!-- ================= OPEN GRAPH ================= -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="My Website">
-    <meta property="og:description" content="Website description">
-    <meta property="og:url" content="https://example.com/">
-    <meta property="og:image" content="https://example.com/preview.jpg">
-    <meta property="og:site_name" content="My Website">
-
-    <!-- ================= TWITTER CARD ================= -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My Website">
-    <meta name="twitter:description" content="Website description">
-    <meta name="twitter:image" content="https://example.com/preview.jpg">
-
-    <!-- ================= RESOURCE HINTS ================= -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
-
-    <!-- ================= CSS ================= -->
-    <link rel="stylesheet" href="style.css">
-
+        <meta name="theme-color" content="#2966c1">
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2966c1" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2966c1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&amp;family=Roboto&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <link rel="manifest" href="/manifest.json">
+        <title>DIGANTA</title>
     <style>
-        /* =====================================
-   GLOBAL
-===================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .main-container{
+            width: 650px;
+            justify-self: center;
         }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6fa;
-            color: #222;
+        section.youling {
+            width: 650px;
+            justify-self: center;
         }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 25px;
-        }
-
-        /* =====================================
-   HEADER
-===================================== */
-
-        .header {
-            margin-bottom: 22px;
-        }
-
-        .header h1 {
-            font-size: 27px;
-            margin-bottom: 8px;
-            color: #202020;
-        }
-
-        .header p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        #status {
-            margin-top: 12px;
-            font-size: 13px;
-            color: #777;
-        }
-
-        /* =====================================
-   SEARCH
-===================================== */
-
-        .search-wrapper {
+        section.main-sec {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .search-box {
-            position: relative;
-            flex: 1;
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 19px;
-            color: #999;
-            pointer-events: none;
-        }
-
-        .search-input {
-            width: 100%;
-            height: 48px;
-            padding: 0 15px 0 43px;
-            border: 1px solid #ddd;
-            border-radius: 9px;
-            background: white;
-            color: black;
-            outline: none;
-            font-size: 14px;
-            transition: .2s;
-        }
-
-        .search-input:focus {
-            border-color: #315efb;
-            box-shadow: 0 0 0 3px rgba(49, 94, 251, .1);
-        }
-
-        .reset-search {
-            height: 48px;
-            padding: 0 20px;
-            border: none;
-            border-radius: 9px;
-            background: #315efb;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: .2s;
-            white-space: nowrap;
-        }
-
-        .reset-search:hover {
-            background: #1944d1;
-        }
-
-        /* =====================================
-   CARD LIST
-===================================== */
-
-        .card-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .card {
-            display: flex;
-            min-height: 190px;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, .06);
-            transition: .25s;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .card:hover,
-        .card:focus-visible {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
-        }
-
-        .card-image {
-            width: 260px;
-            min-width: 260px;
-            height: 200px;
-            object-fit: cover;
-            background: #e5e5e5;
-        }
-
-        .card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            min-width: 0;
-        }
-
-        .category {
-            display: inline-block;
-            width: fit-content;
-            padding: 6px 12px;
-            background: #e8efff;
-            color: #2855bd;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        /* =====================================
-           MULTIPLE CATEGORY TAGS
-           Additive enhancement: each comma-separated
-           category receives its own colored badge.
-        ===================================== */
-
-        .category-list {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 7px;
-            margin-bottom: 12px;
-        }
-
-        .category-list .category {
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
-            margin: 0;
-            padding: 6px 11px;
-            border: 1px solid transparent;
-            border-radius: 999px;
-            font-size: 11px;
-            line-height: 1.25;
-            font-weight: 700;
-            letter-spacing: .2px;
-            white-space: normal;
-            overflow-wrap: anywhere;
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .category-list .category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 64, 175, .12);
-        }
-
-        .category-list .category:nth-child(6n + 1) {
-            color: #1757b8;
-            background: #e8f1ff;
-            border-color: #c8dcff;
-        }
-
-        .category-list .category:nth-child(6n + 2) {
-            color: #087a58;
-            background: #e3f8ef;
-            border-color: #b9ecd5;
-        }
-
-        .category-list .category:nth-child(6n + 3) {
-            color: #7441b6;
-            background: #f1eaff;
-            border-color: #dfceff;
-        }
-
-        .category-list .category:nth-child(6n + 4) {
-            color: #b45309;
-            background: #fff3df;
-            border-color: #ffdfad;
-        }
-
-        .category-list .category:nth-child(6n + 5) {
-            color: #be3455;
-            background: #ffebf0;
-            border-color: #ffcbd8;
-        }
-
-        .category-list .category:nth-child(6n) {
-            color: #087e91;
-            background: #e2f8fb;
-            border-color: #b6eaf0;
-        }
-
-        @media (max-width: 650px) {
-            .category-list {
-                gap: 6px;
-            }
-
-            .category-list .category {
-                padding: 6px 9px;
-                font-size: 10px;
-            }
-        }
-
-        .card-title {
-            font-size: 21px;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            color: #222;
-            overflow-wrap: anywhere;
-        }
-
-        .description {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #666;
-            margin-bottom: 15px;
-            overflow-wrap: anywhere;
-        }
-
-        .card-date {
-            margin-top: auto;
-            color: #999;
-            font-size: 12px;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 13px;
-            font-weight: bold;
-            color: #315efb;
-        }
-
-        /* =====================================
-   LOADING
-===================================== */
-
-        .loading {
-            padding: 55px 20px;
-            text-align: center;
-            color: #777;
-            background: white;
-            border-radius: 12px;
-        }
-
-        .loader {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #e5e5e5;
-            border-top-color: #315efb;
-            border-radius: 50%;
-            animation: spin .8s linear infinite;
-            margin: 0 auto 18px;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .loading h3 {
-            font-size: 17px;
-            color: #333;
-            margin-bottom: 6px;
-        }
-
-        .loading p {
-            font-size: 13px;
-            color: #888;
-        }
-
-        /* =====================================
-   EMPTY STATE
-===================================== */
-
-        .empty-state {
-            background: white;
-            padding: 45px 20px;
-            text-align: center;
-            border-radius: 12px;
-        }
-
-        .empty-state h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .empty-state p {
-            font-size: 14px;
-            color: #888;
-        }
-
-        /* =====================================
-   ERROR
-===================================== */
-
-        .error {
-            background: #fff0f0;
-            padding: 20px;
-            color: #b00020;
-            border-radius: 10px;
-            overflow-wrap: anywhere;
-        }
-
-        /* =====================================
-   PAGINATION
-===================================== */
-
-        .pagination {
-            display: flex;
+            height: 800px;
             justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 30px 0;
+            flex-direction: column;
         }
-
-        .page-btn {
-            min-width: 40px;
-            height: 40px;
-            padding: 0 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            color: #333;
-            font-size: 14px;
-            cursor: pointer;
-            transition: .2s;
-        }
-
-        .page-btn:hover:not(:disabled) {
-            background: #e8efff;
-            border-color: #315efb;
-            color: #315efb;
-        }
-
-        .page-btn.active {
-            background: #315efb;
-            color: white;
-            border-color: #315efb;
-            font-weight: bold;
-        }
-
-        .page-btn:disabled {
-            opacity: .4;
-            cursor: not-allowed;
-        }
-
-        .page-dots {
-            color: #777;
-            padding: 0 4px;
-        }
-
-        .page-info {
-            width: 100%;
-            text-align: center;
-            color: #777;
-            font-size: 13px;
-            margin-top: 8px;
-        }
-
-        /* =====================================
-   FOOTER
-===================================== */
-
-        .footer {
-            padding: 30px 10px;
-            text-align: center;
-            font-size: 13px;
-            color: #999;
-        }
-
-        /* =====================================
-   RESPONSIVE
-===================================== */
-
-        @media(max-width: 650px) {
-
-            .container {
-                padding: 15px;
+        @media (max-width: 650px) {
+            .main-container{
+                width: auto;
             }
-
-            .header h1 {
-                font-size: 23px;
-            }
-
-            .header {
-                margin-bottom: 22px;
-                display: flex;
-                flex-direction: column;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .search-wrapper {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .reset-search {
-                width: 100%;
-            }
-
-            .card {
-                flex-direction: column;
-            }
-
-            .card-image {
-                width: 100%;
-                min-width: 100%;
-                height: 210px;
-            }
-
-            .card-content {
-                padding: 18px;
-            }
-
-            .card-title {
-                font-size: 19px;
-            }
-
-            .pagination {
-                gap: 5px;
-            }
-
-            .page-btn {
-                min-width: 36px;
-                height: 38px;
-                padding: 0 9px;
-                font-size: 13px;
+            section.youling {
+                width: 95%;
             }
         }
     </style>
-</head>
+    </head>
 
-<body>
+<style>
+    .socl {
+    display: flex;
+    margin: 10px 15px;
+    background-color: #fafafa;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #0765a136;
+    flex-direction: row;
+    width: -webkit-fill-available;
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(49,132,253,.5);
+}
+.btn-check:focus+.btn-success, .btn-success:focus {
+    color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(60,153,110,.5);
+}
+.btn-check:active+.btn-primary:focus, 
+.btn-check:checked+.btn-primary:focus, 
+.btn-primary.active:focus, 
+.btn-primary:active:focus, 
+.show>.btn-primary.dropdown-toggle:focus {
+    background-color: rgb(39, 102, 198) !important;
+    box-shadow: 0 0 0 .25rem rgba(49,132,253,.5);
+}
+.btn-check:active+.btn-success:focus, 
+.btn-check:checked+.btn-success:focus, 
+.btn-success.active:focus, 
+.btn-success:active:focus, 
+.show>.btn-success.dropdown-toggle:focus {
+    background-color: rgb(39, 153, 110) !important;
+    box-shadow: 0 0 0 .25rem rgba(60,153,110,.5);
+}
+.connect-with-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
 
-    <main class="container">
+  /* Floating action button container */
+  .fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #0078ff;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-        <!-- HEADER -->
+  /* Hover effect */
+  .fab-container:hover {
+    background-color: #005bb5;
+  }
 
-        <header class="header">
+  /* Icon styling */
+  .fab-container i {
+    font-size: 24px;
+    color: #fff;
+  }
 
-            <h1>Latest Articles</h1>
+  /* Iframe container styling */
+  .iframe-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+    cursor: move; /* Cursor indicates draggable area */
+    background: white;
+  }
 
-            <p>Explore our latest articles and educational content.</p>
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 
-            <div id="status">
-                Connecting to Google Sheets...
+  /* Close, Maximize, and Minimize button styling */
+  /* .control-btns {
+    top: 20px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+    background-color: #2966c1;
+} */
+
+.control-btns {
+    height: 25px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    background-color: #2966c1;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+}
+
+.control-btn2 {
+    color: #ffffff8b;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.464);
+    width: 60px;
+    height: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.control-btn {
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+.blaer-efect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 999;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
+}
+.contaner-for-navigation {
+    /* display: flex; */
+    display: none;
+    flex-direction: row-reverse;
+}
+p.powerd-by {
+    margin: 0;
+    padding: 0 10px;
+    color: #ffffff73;
+    display: none;
+}
+.left-drager {
+    width: 35%;
+    height: 100%;
+}
+.right-drager {
+    width: 35%;
+    height: 100%;
+}
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+</style>
+<body class="xvb4b4 x6n32m9 x1nr1p0w x1ehdrup">
+        <div id="blaer-efect" class="blaer-efect"></div>
+    <section class="main-container">
+        <div class="profile">
+            <div class="d1">
+                <img src="image/profile.jpg" alt="">
             </div>
-
-        </header>
-
-        <!-- SEARCH -->
-
-        <div class="search-wrapper">
-
-            <div class="search-box">
-
-                <span class="search-icon">⌕</span>
-
-                <input type="search" id="searchInput" class="search-input"
-                    placeholder="Search by title, category, description or content..." autocomplete="off"
-                    aria-label="Search articles">
-
+            <div class="d2">
+                <h1>
+                    <a href="" class="typewrite" data-period="2000" data-type="[ &quot;Hi&quot;,&quot; I'm DIGANTA&quot;, &quot;I'm Creative&quot;, &quot;I Love to Designing&quot;, &quot;I Love to develop&quot;, &quot; I Love to learn&quot;, &quot;I Love to create&quot; ]"><span class="wrap"></span></a>
+                </h1>
+                <p>The Creater Boy</p>
+                <div class="connect-with-me">
+                    <a href="https://wa.me/7584997310"><button style="width: 120px; background-color: #2f6af3;font-size: 12px;border-radius: 10px;border: 0;margin: 10px;" type="button" class="btn btn-primary">CHAT WITH ME</button></a>
+                    <!-- <a href="chat.html"><button style="width: 120px; background-color: #2f6af3;font-size: 12px;border-radius: 10px;border: 0;margin: 10px;" type="button" class="btn btn-primary">CHAT WITH A.I</button></a> -->
+                    <!-- <p>OR</p> -->
+                    <!-- <a href="https://wa.me/6296537272"><button style="width: 120px; background-color: #13a245;font-size: 12px;border-radius: 10px;border: 0;margin: 10px;" type="button" class="btn btn-success">CHAT WITH ME</button></a> -->
+                </div>
+                <p class=" glob">I love technology, programming is a part of me</p>
+                <p class="glob2">I am always there to help you. Please follow me. I have no expectations from you, if you like me, definitely contact me</p>
             </div>
-
-            <button type="button" id="resetSearch" class="reset-search">
-                ↻ Reset Search
-            </button>
-
         </div>
-
-        <!-- ARTICLE CARDS -->
-
-        <section id="cardList" class="card-list" aria-live="polite">
-
-            <div class="loading">
-
-                <div class="loader"></div>
-
-                <h3>Fetching records...</h3>
-
-                <p>Please wait while we load your articles.</p>
-
+        <div class="worning alert alert-warning alert-dismissible fade show" role="alert">
+            <svg style="width: 15px; color: #c32d2d;" xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+            </svg>
+            <strong>Warning!</strong> This site is still under development period, please wait and follow us.You can only enter <a href="https://youtube.com/@gareebokagame1266?si=dEBrJgeCyjOF0GgR" style="color: #c32d2d;" class="alert-link">YouTube</a>.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- <div class="worning">This site is still under development period, please wait and follow us.You can only enter YouTube.</div> -->
+        <div class=" boom soc7 oder">
+            <!-- <div class="block1 ullu">SKILL</div> -->
+            <!-- <div class="block2 ullu">PROJECT</div> -->
+            <a style="width: 45%;" href="#"><button style="width: 100%; background-color: #0765a1;" type="button" class="btn btn-primary">SKILL</button></a>
+            <a style="width: 45%;" href="project.html"><button style="width: 100%;" type="button" class="btn btn-success">PROJECT</button></a>
+        </div>
+        <!-- <a href="showProfile">Show Profile</a> -->
+        <!-- <a href="example-app:showProfile">Show Profile</a> -->
+        <a class="uling" href="pages/sitefbook.html"><div class="socl"><img src="60/facebook.png" alt="">Facebook</div></a>
+        <a class="uling" href="pages/youtube.html"><div class="socl"><img src="60/youtube.png" alt="">Youtube</div></a>
+        <a class="uling" href="pages/instagram.html"><div class="socl"><img src="60/instagram.png" alt="">Instagram</div></a>
+        <a class="uling" href="pages/threads.html"><div class="socl"><img src="60/threads.png" alt="">Threads</div></a>
+        <a class="uling" href="pages/bloger.html"><div class="socl"><img src="60/bloger.png" alt="">Bloger</div></a>
+        <a class="uling" href="pages/github.html"><div class="socl"><img src="60/github.png" alt="">Github</div></a>
+    </section>
+    <!-- Floating action button with chat icon -->
+    <div class="fab-container" id="fabiconblock" onclick="toggleIframe()">
+        <img src="png\chat1.png" alt="">
+    </div>
+    <!-- Draggable Iframe container -->
+    <div class="iframe-container" id="flotewindow" >
+      <div class="control-btns" id="conteinesblock">
+        <!-- <button class="control-btn" onclick="toggleIframe()">×</button> -->
+        <!-- <button class="control-btn" onclick="maximizeIframe()">⛶</button> -->
+        <p id="iframeContainer" class="powerd-by">Powerd by DIGANTA</p>
+        <div class="left-drager" id="leftdrager"></div>
+        <button class="control-btn2" id="androidnavigationbutton" onclick="maximizeIframe()"></button>
+        <div class="right-drager" id="rightdrager"></div>
+         <div class="contaner-for-navigation" id="navigationcomputer">
+             <button class="control-btn close-btn" onclick="toggleIframe()">×</button>
+             <button class="control-btn maximize-btn" onclick="maximizeIframe()">⛶</button>
+             <button class="control-btn minimize-btn" onclick="minimizeIframe()">–</button>
+         </div>
+        <!-- <button class="control-btn" onclick="minimizeIframe()">–</button> -->
+      </div>
+      <iframe src="https://www.example.com"></iframe> <!-- Replace with your URL -->
+    </div>
+    <section class="youling">
+        <div style="font-size: 10px; text-align: center; color:#728997;">Made By DigantaCreaterStudio</div>
+        <div class="manue">
+            <div class="sub-box">
+                <div class="foot-txt">Facebook</div>
+                <div class="foot-txt">Youtube</div>
+                <div class="foot-txt">Instagram</div>
+                <div class="foot-txt">Whatsapp</div>
+                <div class="foot-txt">Twitter</div>
+                <div class="foot-txt">Linkedin</div>
+                <div class="foot-txt">Bloger</div>
+                <div class="foot-txt">Discord</div>
+                <div class="foot-txt">Artstation</div>
+                <div class="foot-txt">Git</div>
+                <div class="foot-txt">Github</div>
             </div>
-
-        </section>
-
-        <!-- PAGINATION -->
-
-        <nav id="pagination" class="pagination" aria-label="Article pages"></nav>
-
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-        © 2026 POST. All rights reserved.
-    </footer>
-
-
+            <div class="sub-box">
+                <div class="foot-txt">Google</div>
+                <div class="foot-txt">Amazon</div>
+                <div class="foot-txt">Telegram</div>
+                <div class="foot-txt">Playstore</div>
+                <div class="foot-txt">Short URL</div>
+                <div class="foot-txt">Bard</div>
+                <div class="foot-txt">Openai</div>
+                <div class="foot-txt">GeeksforGeeks</div>
+                <div class="foot-txt">Bootstrap</div>
+                <div class="foot-txt">Streamlabs</div>
+                <div class="foot-txt">W3schools</div>
+            </div>
+            <div class="sub-box">
+                <div class="foot-txt">Html</div>
+                <div class="foot-txt">Css</div>
+                <div class="foot-txt">Javascript</div>
+                <div class="foot-txt">Php</div>
+                <div class="foot-txt">Python</div>
+                <div class="foot-txt">Xml</div>
+                <div class="foot-txt">Java</div>
+                <div class="foot-txt">Android Studio</div>
+                <div class="foot-txt">Sqli</div>
+                <div class="foot-txt">Scss</div>
+                <div class="foot-txt">Tailwind CSS</div>
+            </div>
+        </div>
+        <div class="hund">
+            <img style="width: 60px;" src="60/google.png" alt="">
+            <div style="color: #728997; font-size: 10px;">ALL RIGHT RESEVED CC 2024</div>
+            <div style="display: flex;align-items: center;flex-direction: row;">
+                <a style="color: #728997; font-size: 6px; text-decoration: none;" href="privacypolicy.html">Privacypolicy</a>
+                <samp style="color: #728997;font-size: 6px;margin: 0;padding: 0;">|</samp>
+                <a style="color: #728997; font-size: 6px; text-decoration: none;" href="termsandconditions.html">Terms and Conditions</a>
+            </div>
+        </div>
+    </section>
     <script>
+        let tapCount = 0;
+        let isDragging = false;
+        let isMaximized = false;
+        let offsetX, offsetY,tapTimeout;
+      
+        const blaerefect = document.getElementById('blaer-efect');
+        const iframeContainer = document.getElementById('iframeContainer');
+        const flotewindow = document.getElementById('flotewindow');
+        const leftdrager = document.getElementById('leftdrager');
+        const rightdrager = document.getElementById('rightdrager');
+        const androidnavigationbutton = document.getElementById('androidnavigationbutton');
+        const navigationcomputer = document.getElementById('navigationcomputer');
+        const conteinesblock = document.getElementById('conteinesblock');
+        const originalSize = { width: '300px', height: '400px' }; // Default size
+        const maximizedSize = { width: '100vw', height: '100vh', top: '0', left: '0' }; // Fullscreen size
+      
+        function toggleIframe() {
+            tapCount++;
 
-        /* =====================================
-           GOOGLE APPS SCRIPT API
-        ===================================== */
-
-        // IMPORTANT:
-        // Replace YOUR_DEPLOYMENT_ID with your real
-        // Google Apps Script deployment ID.
-
-        const API_URL =
-            "https://script.google.com/macros/s/AKfycbz4ijwxCod0yeyeUUtLacBudoOl6X74MBqbQDHPRr578Mik9nXGhpoKs7Da31XWRCJs/exec?action=list&sheet=Data&sort=ID&order=asc";
-
-        // Number of records fetched per API request.
-        const API_BATCH_SIZE = 100;
-
-        // Number of cards displayed per website page.
-        const RECORDS_PER_PAGE = 10;
-
-        // Maximum number of page buttons around current page.
-        const PAGE_WINDOW = 2;
-
-
-        /* =====================================
-           ELEMENTS
-        ===================================== */
-
-        const cardList = document.getElementById("cardList");
-
-        const statusBox = document.getElementById("status");
-
-        const searchInput = document.getElementById("searchInput");
-
-        const resetSearch = document.getElementById("resetSearch");
-
-        const pagination = document.getElementById("pagination");
-
-
-        /* =====================================
-           GLOBAL DATA
-        ===================================== */
-
-        let allRecords = [];
-
-        let filteredRecords = [];
-
-        let currentPage = 1;
-
-
-        /* =====================================
-           COLUMN DETECTION
-        ===================================== */
-
-        function getValue(item, names) {
-
-            const key = Object.keys(item).find(k =>
-                names.includes(k.trim().toUpperCase())
-            );
-
-            return key !== undefined ? item[key] : "";
-
-        }
-
-
-        /* =====================================
-           DESCRIPTION DETECTION
-        ===================================== */
-
-        function getDescription(item) {
-
-            const normal = getValue(item, [
-                "DESCRIPTION",
-                "DESC"
-            ]);
-
-            if (normal !== "") {
-                return normal;
+            if (tapTimeout) {
+                clearTimeout(tapTimeout);
             }
 
-            // Your API may use a long sentence as
-            // the description column heading.
+            tapTimeout = setTimeout(() => {
+                if (tapCount === 1) {
+                    // Double-tap detected
+                    console.log("Double-tap detected!");
+                    if (flotewindow.style.display === 'none' || flotewindow.style.display === '') {
+                      flotewindow.style.display = 'block'; // Show iframe
+                    } else {
+                      flotewindow.style.display = 'none';  // Hide iframe
+                    }
+                    // Place double-tap functionality here
+                } else if (tapCount === 2) {
+                    // Triple-tap detected
+                    if (androidnavigationbutton.style.display === 'none') {
+                        navigationcomputer.style.display = "none";
+                        androidnavigationbutton.style.display = "block";
+                        iframeContainer.style.display = "none";
+                        iframeContainer.style.width = "auto";
+                        leftdrager.style.display = "block";
+                        rightdrager.style.display = "block";
+                        conteinesblock.style.justifyContent ="space-between"
+                    } else {
+                        navigationcomputer.style.display = "flex";
+                        androidnavigationbutton.style.display = "none";
+                        iframeContainer.style.display = "block";
+                        iframeContainer.style.width = "70%";
+                        leftdrager.style.display = "none";
+                        rightdrager.style.display = "none";
+                        conteinesblock.style.justifyContent ="space-between"
+                    }
+                    console.log("Triple-tap detected!");
 
-            const excluded = [
-                "ID",
-                "TITEL",
-                "TITLE",
-                "CONTENT",
-                "IMAGE URL",
-                "IMAGE_URL",
-                "CATEGORY",
-                "DATE",
-                "DESCRIPTION",
-                "DESC"
-            ];
-
-            const key = Object.keys(item).find(k =>
-                !excluded.includes(k.trim().toUpperCase())
-            );
-
-            return key ? item[key] : "";
-
-        }
-
-
-        /* =====================================
-           ESCAPE HTML
-        ===================================== */
-
-        function escapeHTML(value) {
-
-            return String(value ?? "").replace(
-                /[&<>"']/g,
-                char => ({
-                    "&": "&amp;",
-                    "<": "&lt;",
-                    ">": "&gt;",
-                    '"': "&quot;",
-                    "'": "&#39;"
-                })[char]
-            );
-
-        }
-
-
-        /* =====================================
-           FORMAT DATE
-        ===================================== */
-
-        function formatDate(value) {
-
-            if (!value) {
-                return "Date unavailable";
-            }
-
-            const date = new Date(value);
-
-            if (isNaN(date.getTime())) {
-                return String(value);
-            }
-
-            return date.toLocaleDateString("en-IN", {
-                day: "2-digit",
-                month: "long",
-                year: "numeric"
-            });
-
-        }
-
-
-        /* =====================================
-           VALIDATE IMAGE URL
-        ===================================== */
-
-        function validImageURL(value) {
-
-            try {
-
-                const parsed = new URL(String(value));
-
-                if (
-                    parsed.protocol === "https:" ||
-                    parsed.protocol === "http:"
-                ) {
-                    return parsed.href;
+                    // Place triple-tap functionality here
+                }else if (tapCount === 3) {
+                    // Triple-tap detected
+                    console.log("Triple-tap detected!");
+                    navigationcomputer.style.display = "flex";
+                    androidnavigationbutton.style.display = "none";
+                    iframeContainer.style.display = "block";
+                    // rightdrager.style.display = "none";
+                    // Place triple-tap functionality here
                 }
-
-            } catch (error) { }
-
-            return "";
-
+            
+                // Reset tap count
+                tapCount = 0;
+            }, 300); // 300 ms interval to detect rapid taps
         }
-
-
-        /* =====================================
-           LOADING ANIMATION
-        ===================================== */
-
-        function showLoading() {
-
-            cardList.innerHTML = `
-
-        <div class="loading">
-
-            <div class="loader"></div>
-
-            <h3>Fetching records...</h3>
-
-            <p>Please wait while we load your articles.</p>
-
-        </div>
-
-    `;
-
-            pagination.innerHTML = "";
-
+      
+        function maximizeIframe() {
+          if (!isMaximized) {
+            flotewindow.style.width = maximizedSize.width;
+            flotewindow.style.height = maximizedSize.height;
+            flotewindow.style.top = maximizedSize.top;
+            flotewindow.style.left = maximizedSize.left;
+            flotewindow.style.borderRadius = "0px";
+            isMaximized = true;
+          } else {
+            flotewindow.style.width = originalSize.width;
+            flotewindow.style.height = originalSize.height;
+            flotewindow.style.bottom = '100px';
+            flotewindow.style.right = '20px';
+            flotewindow.style.borderRadius = "10px";
+            isMaximized = false;
+          }
         }
-
-
-        /* =====================================
-           RENDER MULTIPLE CATEGORIES
-           Splits values such as:
-           Lifestyle,Technology,Artificial Intelligence
-           into separate, individually colored badges.
-        ===================================== */
-
-        function renderCategories(value) {
-
-            const categories = String(value ?? "")
-                .split(",")
-                .map(category => category.trim())
-                .filter(Boolean);
-
-            const finalCategories = categories.length
-                ? categories
-                : ["General"];
-
-            return finalCategories.map(category => `
-                <span
-                    class="category"
-                    role="button"
-                    tabindex="0"
-                    data-category="${escapeHTML(category)}"
-                    aria-label="Search category ${escapeHTML(category)}"
-                    title="Click to search ${escapeHTML(category)}"
-                >${escapeHTML(category)}</span>
-            `).join("");
-
+      
+        function minimizeIframe() {
+            flotewindow.style.width = originalSize.width;
+            flotewindow.style.height = originalSize.height;
+            flotewindow.style.bottom = '100px';
+            flotewindow.style.right = '20px';
+            flotewindow.style.borderRadius = "10px";
+            isMaximized = false;
         }
-
-
-        /* =====================================
-           CREATE ARTICLE CARD
-        ===================================== */
-
-        function createCard(item) {
-
-            const id = getValue(item, ["ID"]);
-
-            const title =
-                getValue(item, ["TITEL", "TITLE"]) ||
-                "Untitled";
-
-            const category =
-                getValue(item, ["CATEGORY"]) ||
-                "General";
-
-            const description = getDescription(item);
-
-            const date = getValue(item, ["DATE"]);
-
-            const imageURL = validImageURL(
-                getValue(item, ["IMAGE URL", "IMAGE_URL"])
-            );
-
-            const image = imageURL
-                ? `
-
-            <img
-                class="card-image"
-                src="${escapeHTML(imageURL)}"
-                alt="${escapeHTML(title)}"
-                loading="lazy"
-                onerror="this.style.display='none'"
-            >
-
-        `
-                : "";
-
-            return `
-
-        <article
-
-            class="card"
-
-            tabindex="0"
-
-            role="link"
-
-            aria-label="Read ${escapeHTML(title)}"
-
-            data-post-id="${escapeHTML(id)}"
-
-            onclick="openPost(this)"
-
-            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPost(this)}"
-
-        >
-
-            ${image}
-
-            <div class="card-content">
-
-                <div class="category-list" aria-label="Article categories">
-                    ${renderCategories(category)}
-                </div>
-
-                <h2 class="card-title">
-                    ${escapeHTML(title)}
-                </h2>
-
-                <p class="description">
-                    ${escapeHTML(description || "No description available.")}
-                </p>
-
-                <div class="card-date">
-                    📅 ${escapeHTML(formatDate(date))}
-                </div>
-
-                <span class="read-more">
-                    Read Article →
-                </span>
-
-            </div>
-
-        </article>
-
-    `;
-
+      
+        // Function to start drag on mouse down or touch start
+        function startDrag(e) {
+            blaerefect.style.display = "block"
+            blaerefect.style.opacity = "1"
+          if (!isMaximized) { // Only allow dragging if not maximized
+            isDragging = true;
+            const rect = flotewindow.getBoundingClientRect();
+            offsetX = (e.clientX || e.touches[0].clientX) - rect.left;
+            offsetY = (e.clientY || e.touches[0].clientY) - rect.top;
+            e.preventDefault();
+          }
         }
-
-
-        /* =====================================
-           OPEN POST
-        ===================================== */
-
-        function openPost(card) {
-
-            const id = card.dataset.postId;
-
-            if (!id) {
-
-                alert("Post ID not found!");
-
-                return;
-
+      
+        // Function to perform dragging on mouse move or touch move
+        function performDrag(e) {
+          if (isDragging) {
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            flotewindow.style.left = `${clientX - offsetX}px`;
+            flotewindow.style.top = `${clientY - offsetY}px`;
+            e.preventDefault();
+          }
+        }
+      
+        // Function to stop drag on mouse up or touch end
+        function stopDrag() {
+          blaerefect.style.opacity = "0"
+          setTimeout(function(){},5000); //delay is in milliseconds 
+          blaerefect.style.display = "none"
+          isDragging = false;
+        }
+        function setThemeColor(color) {
+            const metaThemeColor = document.querySelector("meta[name=theme-color]");
+            if (metaThemeColor) {
+                metaThemeColor.setAttribute("content", color);
             }
-
-            window.location.href =
-                "post.html?ID=" + encodeURIComponent(id);
-
         }
 
-
-        /* =====================================
-           RENDER CURRENT PAGE
-        ===================================== */
-
-        function renderPage() {
-
-            const totalRecords = filteredRecords.length;
-
-            const totalPages = Math.ceil(
-                totalRecords / RECORDS_PER_PAGE
-            );
-
-            if (totalRecords === 0) {
-
-                cardList.innerHTML = `
-
-            <div class="empty-state">
-
-                <h3>No Articles Found</h3>
-
-                <p>Try another search keyword.</p>
-
-            </div>
-
-        `;
-
-                pagination.innerHTML = "";
-
-                return;
-
-            }
-
-            currentPage = Math.min(
-                Math.max(currentPage, 1),
-                totalPages
-            );
-
-            const startIndex =
-                (currentPage - 1) * RECORDS_PER_PAGE;
-
-            const endIndex =
-                Math.min(
-                    startIndex + RECORDS_PER_PAGE,
-                    totalRecords
-                );
-
-            const pageRecords = filteredRecords.slice(
-                startIndex,
-                endIndex
-            );
-
-            cardList.innerHTML = pageRecords
-                .map(createCard)
-                .join("");
-
-            renderPagination(totalPages);
-
-        }
-
-
-        /* =====================================
-           PAGINATION BUTTON HELPER
-        ===================================== */
-
-        function createPageButton(page, label, active = false, disabled = false) {
-
-            return `
-
-        <button
-
-            type="button"
-
-            class="page-btn ${active ? "active" : ""}"
-
-            data-page="${page}"
-
-            ${active ? 'aria-current="page"' : ""}
-
-            ${disabled ? "disabled" : ""}
-
-        >
-
-            ${label}
-
-        </button>
-
-    `;
-
-        }
-
-
-        /* =====================================
-           RENDER PAGINATION
-        ===================================== */
-
-        function renderPagination(totalPages) {
-
-            if (totalPages <= 1) {
-
-                pagination.innerHTML = "";
-
-                return;
-
-            }
-
-            let buttons = "";
-
-            // Previous button.
-
-            buttons += createPageButton(
-                currentPage - 1,
-                "← Previous",
-                false,
-                currentPage === 1
-            );
-
-            // First page.
-
-            if (currentPage > PAGE_WINDOW + 2) {
-
-                buttons += createPageButton(1, "1");
-
-                buttons += `<span class="page-dots">...</span>`;
-
-            }
-
-            // Visible page range.
-
-            const startPage = Math.max(
-                1,
-                currentPage - PAGE_WINDOW
-            );
-
-            const endPage = Math.min(
-                totalPages,
-                currentPage + PAGE_WINDOW
-            );
-
-            for (
-                let page = startPage;
-                page <= endPage;
-                page++
-            ) {
-
-                buttons += createPageButton(
-                    page,
-                    page,
-                    page === currentPage
-                );
-
-            }
-
-            // Last page.
-
-            if (currentPage < totalPages - PAGE_WINDOW - 1) {
-
-                buttons += `<span class="page-dots">...</span>`;
-
-                buttons += createPageButton(
-                    totalPages,
-                    totalPages
-                );
-
-            }
-
-            // Next button.
-
-            buttons += createPageButton(
-                currentPage + 1,
-                "Next →",
-                false,
-                currentPage === totalPages
-            );
-
-            // Record information.
-
-            const firstRecord =
-                (currentPage - 1) * RECORDS_PER_PAGE + 1;
-
-            const lastRecord = Math.min(
-                currentPage * RECORDS_PER_PAGE,
-                filteredRecords.length
-            );
-
-            buttons += `
-
-        <div class="page-info">
-
-            Showing ${firstRecord}–${lastRecord}
-            of ${filteredRecords.length} articles
-
-            | Page ${currentPage} of ${totalPages}
-
-        </div>
-
-    `;
-
-            pagination.innerHTML = buttons;
-
-        }
-
-
-        /* =====================================
-           PAGE BUTTON EVENTS
-        ===================================== */
-
-        pagination.addEventListener("click", function (event) {
-
-            const button = event.target.closest("[data-page]");
-
-            if (!button || button.disabled) {
-                return;
-            }
-
-            const page = Number(button.dataset.page);
-
-            changePage(page);
-
-        });
-
-
-        /* =====================================
-           CHANGE PAGE
-        ===================================== */
-
-        function changePage(page) {
-
-            const totalPages = Math.ceil(
-                filteredRecords.length / RECORDS_PER_PAGE
-            );
-
-            if (
-                !Number.isInteger(page) ||
-                page < 1 ||
-                page > totalPages
-            ) {
-                return;
-            }
-
-            currentPage = page;
-
-            renderPage();
-
-            cardList.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-
-        /* =====================================
-           DISPLAY RECORDS
-        ===================================== */
-
-        function displayRecords(records) {
-
-            filteredRecords = records;
-
-            currentPage = 1;
-
-            renderPage();
-
-        }
-
-
-        /* =====================================
-           SEARCH ENGINE
-        ===================================== */
-
-        function searchRecords() {
-
-            const query = searchInput.value
-                .trim()
-                .toLowerCase();
-
-            if (!query) {
-
-                displayRecords(allRecords);
-
-                statusBox.textContent =
-                    "Showing " + allRecords.length + " records";
-
-                return;
-
-            }
-
-            const results = allRecords.filter(item => {
-
-                const title = getValue(item, [
-                    "TITEL",
-                    "TITLE"
-                ]);
-
-                const category = getValue(item, [
-                    "CATEGORY"
-                ]);
-
-                const description = getDescription(item);
-
-                const content = getValue(item, [
-                    "CONTENT"
-                ]);
-
-                const id = getValue(item, [
-                    "ID"
-                ]);
-
-                const searchableText = [
-
-                    title,
-                    category,
-                    description,
-                    content,
-                    id
-
-                ].join(" ").toLowerCase();
-
-                return searchableText.includes(query);
-
-            });
-
-            displayRecords(results);
-
-            statusBox.textContent =
-                "Found " + results.length +
-                " of " + allRecords.length + " records";
-
-        }
-
-
-        /* =====================================
-           RESET SEARCH
-        ===================================== */
-
-        function resetSearchData() {
-
-            searchInput.value = "";
-
-            displayRecords(allRecords);
-
-            statusBox.textContent =
-                "Showing " + allRecords.length + " records";
-
-        }
-
-
-        /* =====================================
-           FETCH ALL API RECORDS
-        ===================================== */
-
-        async function fetchAllRecords() {
-
-            let records = [];
-
-            let offset = 0;
-
-            let hasMore = true;
-
-            let previousBatch = "";
-
-            while (hasMore) {
-
-                const apiURL = new URL(API_URL);
-
-                apiURL.searchParams.set("action", "list");
-
-                apiURL.searchParams.set("sheet", "Data");
-
-                apiURL.searchParams.set("sort", "ID");
-
-                apiURL.searchParams.set("order", "asc");
-
-                apiURL.searchParams.set("offset", offset);
-
-                apiURL.searchParams.set("limit", API_BATCH_SIZE);
-
-                statusBox.textContent =
-                    "Loading records... " +
-                    records.length + " fetched";
-
-                const response = await fetch(apiURL.toString(), {
-
-                    method: "GET",
-
-                    redirect: "follow",
-
-                    cache: "no-store"
-
-                });
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "HTTP Error: " + response.status
-                    );
-
-                }
-
-                const result = await response.json();
-
-                // console.log("GOOGLE SHEETS API:", result);
-
-                if (result.success !== true) {
-
-                    throw new Error(
-                        result.message || "API request failed."
-                    );
-
-                }
-
-                if (!Array.isArray(result.data)) {
-
-                    throw new Error(
-                        "Invalid API response: data must be an array."
-                    );
-
-                }
-
-                const batch = result.data;
-
-                // Stop if the API returns no records.
-
-                if (batch.length === 0) {
-                    break;
-                }
-
-                // Detect an endpoint that ignores offset.
-                // This prevents repeatedly fetching the same batch.
-
-                const batchSignature = JSON.stringify(
-                    batch.map(item => getValue(item, ["ID"]))
-                );
-
-                if (
-                    offset > 0 &&
-                    batchSignature === previousBatch
-                ) {
-
-                    throw new Error(
-                        "The API returned the same records again. Please check whether your Apps Script supports the offset parameter."
-                    );
-
-                }
-
-                previousBatch = batchSignature;
-
-                // Add this batch to the complete collection.
-
-                records = records.concat(batch);
-
-                // Advance offset by the actual number received.
-
-                offset += batch.length;
-
-                // Use the API's has_more value when available.
-
-                if (typeof result.has_more === "boolean") {
-
-                    hasMore =
-                        result.has_more && batch.length > 0;
-
-                } else {
-
-                    // Fallback for APIs without has_more.
-                    hasMore =
-                        batch.length === API_BATCH_SIZE;
-
-                }
-
-                // console.log(
-                //     "Fetched:", records.length,
-                //     "Next offset:", offset,
-                //     "More records:", hasMore
-                // );
-
-            }
-
-            return records;
-
-        }
-
-
-        /* =====================================
-           FETCH DATA
-        ===================================== */
-
-        async function fetchData() {
-
-            try {
-
-                showLoading();
-
-                statusBox.textContent =
-                    "Connecting to Google Sheets...";
-
-                // Validate deployment ID.
-
-                if (API_URL.includes("YOUR_DEPLOYMENT_ID")) {
-
-                    throw new Error(
-                        "Please insert your real Google Apps Script deployment ID."
-                    );
-
-                }
-
-                // Fetch every API batch.
-
-                allRecords = await fetchAllRecords();
-
-                // Display first website page.
-
-                displayRecords(allRecords);
-
-                // Update status.
-
-                statusBox.textContent =
-                    "Successfully loaded " +
-                    allRecords.length +
-                    " records from Google Sheets.";
-
-            }
-
-            catch (error) {
-
-                console.error("API ERROR:", error);
-
-                cardList.innerHTML = `
-
-            <div class="error">
-
-                <strong>Failed to load Google Sheets data</strong>
-
-                <p>${escapeHTML(error.message)}</p>
-
-            </div>
-
-        `;
-
-                pagination.innerHTML = "";
-
-                statusBox.textContent =
-                    "API connection failed.";
-
-            }
-
-        }
-
-
-        /* =====================================
-           EVENT LISTENERS
-        ===================================== */
-
-        // Clicking a category badge fills the search box and filters articles.
-        function activateCategorySearch(categoryBadge) {
-            if (!categoryBadge) return;
-
-            const category = categoryBadge.getAttribute("data-category");
-            if (!category) return;
-
-            searchInput.value = category;
-            searchRecords();
-            searchInput.focus();
-
-            // Keep the search field visible on smaller screens.
-            searchInput.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-        }
-
-        // Use delegation so this also works for cards rendered after API loading.
-        cardList.addEventListener("click", function (event) {
-            const categoryBadge = event.target.closest(".category[data-category]");
-            if (!categoryBadge || !cardList.contains(categoryBadge)) return;
-
-            // Capture phase runs before the article card's inline onclick redirect.
-            event.preventDefault();
-            event.stopPropagation();
-            event.stopImmediatePropagation();
-            activateCategorySearch(categoryBadge);
-        }, true);
-
-        cardList.addEventListener("keydown", function (event) {
-            const categoryBadge = event.target.closest(".category[data-category]");
-            if (!categoryBadge || !cardList.contains(categoryBadge)) return;
-
-            if (event.key === "Enter" || event.key === " ") {
-                // Prevent the article card's keyboard handler from opening post.html.
-                event.preventDefault();
-                event.stopPropagation();
-                event.stopImmediatePropagation();
-                activateCategorySearch(categoryBadge);
-            }
-        }, true);
-
-        searchInput.addEventListener(
-            "input",
-            searchRecords
-        );
-
-        resetSearch.addEventListener(
-            "click",
-            resetSearchData
-        );
-
-
-        /* =====================================
-           INITIALIZE
-        ===================================== */
-
-        fetchData();
-
-    </script>
-
-</body>
-
+        // Example usage: change the theme color to blue
+        setThemeColor("#2966c1");
+
+        // const element = document.getElementById("fabiconblock");
+
+        // element.addEventListener("touchstart", (event) => {
+
+        // });
+      
+        // Event listeners for both mouse and touch events
+        leftdrager.addEventListener('mousedown', startDrag);
+        rightdrager.addEventListener('mousedown', startDrag);
+        iframeContainer.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', performDrag);
+        document.addEventListener('mouseup', stopDrag);
+      
+        leftdrager.addEventListener('touchstart', startDrag);
+        rightdrager.addEventListener('touchstart', startDrag);
+        iframeContainer.addEventListener('touchstart', startDrag);
+        document.addEventListener('touchmove', performDrag);
+        document.addEventListener('touchend', stopDrag);
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<style type="text/css">.typewrite > .wrap { border-right: 0.08em solid #fff}</style></body>
 </html>

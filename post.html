@@ -233,7 +233,7 @@ a {
     .smart-code-actions { gap: 5px; }
     .smart-code-actions >button { padding: 7px 8px; font-size: 10px; }
     .smart-code-block >pre { padding: 13px !important; }
-    .smart-code-block >pre >code { font-size: 12px; }
+    .smart-code-block >pre >code { font-size: 12px;font-weight: bold; }
 }
 @media (prefers-reduced-motion: reduce) {
     .smart-code-block::before { animation: none; }
@@ -477,7 +477,7 @@ a {
 
 .article-body {
     font-size: 16px;
-    line-height: 1.9;
+    line-height: 1.4;
     color: #444;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
@@ -614,6 +614,7 @@ a {
 
     .article-body {
         font-size: 15px;
+        padding: 5px;
     }
 
 }
@@ -661,6 +662,9 @@ a {
 </head>
 
 <body>
+    <div class="full-screen xvb4b4 x6n32m9 x1nr1p0w x1ehdrup" style="height: 100vh;">
+
+
 
 <!-- =====================================
      HEADER
@@ -670,11 +674,11 @@ a {
 
     <div class="header-inner">
 
-        <a href="damo.html" class="logo">
+        <a href="project.html" class="logo">
             POST
         </a>
 
-        <a href="damo.html" class="back-link">
+        <a href="project.html" class="back-link">
             ← All Articles
         </a>
 
@@ -711,11 +715,62 @@ a {
 ===================================== -->
 
 <footer class="footer">
-
-    © 2026 POST. All rights reserved.
+        <section class="youling">
+        <div style="font-size: 10px; text-align: center; color:#728997;">Made By DigantaCreaterStudio</div>
+        <div class="manue">
+            <div class="sub-box">
+                <div class="foot-txt">Facebook</div>
+                <div class="foot-txt">Youtube</div>
+                <div class="foot-txt">Instagram</div>
+                <div class="foot-txt">Whatsapp</div>
+                <div class="foot-txt">Twitter</div>
+                <div class="foot-txt">Linkedin</div>
+                <div class="foot-txt">Bloger</div>
+                <div class="foot-txt">Discord</div>
+                <div class="foot-txt">Artstation</div>
+                <div class="foot-txt">Git</div>
+                <div class="foot-txt">Github</div>
+            </div>
+            <div class="sub-box">
+                <div class="foot-txt">Google</div>
+                <div class="foot-txt">Amazon</div>
+                <div class="foot-txt">Telegram</div>
+                <div class="foot-txt">Playstore</div>
+                <div class="foot-txt">Short URL</div>
+                <div class="foot-txt">Bard</div>
+                <div class="foot-txt">Openai</div>
+                <div class="foot-txt">GeeksforGeeks</div>
+                <div class="foot-txt">Bootstrap</div>
+                <div class="foot-txt">Streamlabs</div>
+                <div class="foot-txt">W3schools</div>
+            </div>
+            <div class="sub-box">
+                <div class="foot-txt">Html</div>
+                <div class="foot-txt">Css</div>
+                <div class="foot-txt">Javascript</div>
+                <div class="foot-txt">Php</div>
+                <div class="foot-txt">Python</div>
+                <div class="foot-txt">Xml</div>
+                <div class="foot-txt">Java</div>
+                <div class="foot-txt">Android Studio</div>
+                <div class="foot-txt">Sqli</div>
+                <div class="foot-txt">Scss</div>
+                <div class="foot-txt">Tailwind CSS</div>
+            </div>
+        </div>
+        <div class="hund">
+            <img style="width: 60px;" src="60/google.png" alt="">
+            <div style="color: #728997; font-size: 10px;">© 2026 POST. All rights reserved.</div>
+            <div style="display: flex;align-items: center;flex-direction: row;">
+                <a style="color: #728997; font-size: 6px; text-decoration: none;" href="privacypolicy.html">Privacypolicy</a>
+                <samp style="color: #728997;font-size: 6px;margin: 0;padding: 0;">|</samp>
+                <a style="color: #728997; font-size: 6px; text-decoration: none;" href="termsandconditions.html">Terms and Conditions</a>
+            </div>
+        </div>
+    </section>
 
 </footer>
-
+</div>
 
 <script>
 
@@ -761,6 +816,7 @@ function createSmartTextEngine(userOptions = {}) {
         detectNumbers: true,
         detectEmoji: true,
         detectHashtags: true,
+        detectNumberedHeadings:true,
         detectMentions: true,
         detectColors: true,
         detectCommands: true,
@@ -1197,6 +1253,33 @@ function createSmartTextEngine(userOptions = {}) {
             );
         }
 
+        
+
+        if (options.detectNumberedHeadings) {
+        
+            text = text.replace(
+                /(^|\n)([ \t]*)(\d+)\.\s+(.+)(?=\n|$)/g,
+                function(match, before, spaces, number, heading) {
+                
+                    detect("numbered_heading", {
+                        number: number,
+                        heading: heading.trim()
+                    });
+                
+                    return (
+                        before +
+                        spaces +
+                        '<span style="font-weight: bold;" class="numbered-heading">' +
+                        number + '. ' +
+                        heading +
+                        '</span>'
+                    );
+                }
+            );
+            
+        }
+
+
         /* MENTION */
 
         if (options.detectMentions) {
@@ -1607,13 +1690,13 @@ function createSmartTextEngine(userOptions = {}) {
 
             html +=
                 listType === "ol"
-                    ? "<ol>\n"
+                    ? "<ol style='line-height: normal;'>\n"
                     : "<ul>\n";
 
             for (const item of list) {
 
                 html +=
-                    "<li>" +
+                    "<li style='font-weight: bold; font-size: medium; margin-left: 10px;'>" +
                     parseInline(item) +
                     "</li>\n";
             }
@@ -1811,7 +1894,7 @@ function createSmartTextEngine(userOptions = {}) {
 
                 detect("horizontal-rule");
 
-                html += "<hr>\n";
+                html += "<hr style='height: 3px;background: #5b7b93;'>\n";
 
                 i++;
                 continue;
@@ -2220,14 +2303,28 @@ function applyHighlightJS(container = articleContainer) {
     });
 }
 
+
+/* =====================================
+   GET ARTICLE ID
+===================================== */
+
+const urlParams = new URLSearchParams(
+    window.location.search
+);
+
+const requestedID = urlParams.get("ID");
+
+
 /* =====================================
    GOOGLE APPS SCRIPT API
 ===================================== */
 
-// Use the SAME deployment ID as damo.html.
+
+// Use the SAME deployment ID as project.html.
+const ID_MAIN = urlParams.get("ID");
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbz4ijwxCod0yeyeUUtLacBudoOl6X74MBqbQDHPRr578Mik9nXGhpoKs7Da31XWRCJs/exec?action=list&sheet=Data&sort=ID&order=asc";
+    "https://script.google.com/macros/s/AKfycbz4ijwxCod0yeyeUUtLacBudoOl6X74MBqbQDHPRr578Mik9nXGhpoKs7Da31XWRCJs/exec?action=get&sheet=Data&&ID="+ID_MAIN;
 // API pagination batch size.
 
 const API_BATCH_SIZE = 100;
@@ -2241,15 +2338,7 @@ const articleContainer =
 document.getElementById("articleContainer");
 
 
-/* =====================================
-   GET ARTICLE ID
-===================================== */
 
-const urlParams = new URLSearchParams(
-    window.location.search
-);
-
-const requestedID = urlParams.get("ID");
 
 
 /* =====================================
@@ -2495,7 +2584,7 @@ function showError(title, message) {
 
             <p>${escapeHTML(message)}</p>
 
-            <a href="damo.html">
+            <a href="project.html">
                 ← Return to Articles
             </a>
 
@@ -2740,7 +2829,7 @@ function displayArticle(item) {
                 <div class="article-footer">
 
                     <a
-                        href="damo.html"
+                        href="project.html"
                         class="back-button"
                     >
                         ← Back to Articles
