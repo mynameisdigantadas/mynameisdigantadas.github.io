@@ -37,8 +37,8 @@
         -webkit-backface-visibility: hidden;
     }
     body{
-        transform: none;
-        -webkit-transform: none;
+        transform: none !important;
+        -webkit-transform: none !important;
     }
 
 }
