@@ -1,0 +1,25 @@
+/* ==========================================
+   MOBILE PERFORMANCE FIX
+   Original gradient design remains unchanged
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    .xvb4b4,
+    .x6n32m9,
+    .x1ehdrup,
+    .x1nr1p0w {
+
+        /* Prevent expensive fixed-background rendering */
+        background-attachment: scroll !important;
+
+        /* Improve mobile scrolling performance */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+
+        /* Prevent unnecessary background repainting */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+}
